@@ -1,9 +1,15 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <AppNavigation/>
   <router-view/>
 </template>
 
+<script>
+import AppNavigation from "./components/Navigation.vue"
 
+export default {
+  name: 'HomeView',
+  components: {
+    AppNavigation
+  }
+}
+</script>

@@ -11,24 +11,19 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/',
+    path: '/contact',
     name: 'contact',
     component: ContactView
   },
   {
-    path: '/',
+    path: '/presentation',
     name: 'presentation',
     component: PresentationView
   },
   {
-    path: '/',
+    path: '/creations',
     name: 'creations',
     component: CreationView
-  },
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
   },
   // {
   //   path: '/about',

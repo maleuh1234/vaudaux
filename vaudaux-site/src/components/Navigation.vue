@@ -150,7 +150,7 @@ closeMenu() {
     position: fixed;
     top: 1rem;
     right: 1rem;
-    z-index: 4;
+    z-index: 8;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,7 +164,7 @@ closeMenu() {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    z-index: 4;
+    z-index: 8;
   }
 
   .bread-container > * {
@@ -190,7 +190,7 @@ closeMenu() {
     background-color: #151515;
     transform-origin: center;
     position: absolute;
-    z-index: 2;
+    z-index: 6;
   }
   
   .main-nav > *, 
@@ -232,7 +232,7 @@ closeMenu() {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: 7;
     display: none;
     align-items: center;
     justify-content: center;

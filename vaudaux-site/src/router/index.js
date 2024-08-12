@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import ContactView from '../views/ContactView.vue'
 import CreationView from '../views/CreationView.vue'
 import PresentationView from '../views/PresentationView.vue'
+import ProductView from '../views/Produit.vue'
 
 const routes = [
   {
@@ -24,6 +25,12 @@ const routes = [
     path: '/creations',
     name: 'creations',
     component: CreationView
+  },
+  {
+    path: '/creations/:id',
+    name: 'product',
+    component: ProductView,
+    props: true,
   },
   // {
   //   path: '/about',

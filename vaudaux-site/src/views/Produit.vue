@@ -1,19 +1,38 @@
 <template>
-  <div class="container">
-    <button class="button-back">back</button>
-    <div class="image-grid">
-      <!-- images du produits, nombre de petites images variable -->
-      <img class="big-img" src="" alt="">
-      <img src="" alt="">
-      <img src="" alt="">
-      <img src="" alt="">
+    <div class="product-page">
+    <h1>{{ product.titre }}</h1>
+    <p> {{ product.txtInfo }} </p>
+    <div v-if="product.imgs && product.imgs.length > 0">
+      <img 
+        v-for="(img, index) in product.imgs" 
+        :key="index" 
+        :src="img.fields.file.url" 
+        :alt="product.titre"
+      >
     </div>
-  </div>
-  <div class="text-container">
-    <h1></h1>
-    <p></p>
+    <p>{{ product.description }}</p>
   </div>
 </template>
+
+<script>
+import contentfulClient from '@/contentfulClient.js';
+
+export default {
+  data() {
+    return {
+      product: {},
+    };
+  },
+  async created() {
+    try {
+      const entry = await contentfulClient.getEntry(this.$route.params.id);
+      this.product = entry.fields;
+    } catch (error) {
+      console.error("Erreur lors de la récupération du produit:", error);
+    }
+  },
+};
+</script>
 
 
 

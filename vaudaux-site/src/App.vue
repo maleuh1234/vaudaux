@@ -1,5 +1,5 @@
 <template>
-  <header class="absolute">
+  <header>
     <div class="logo-aligner">
       <RouterLink to="/"><img class="logo-home" ref="logo" src="./assets/logo.png" alt="Vaudaux" /></RouterLink>
     </div>
@@ -26,5 +26,10 @@ export default {
     width: 100vw;
     padding-left: 3vw;
     z-index: 3;
+  }
+
+  header {
+    position: absolute;
+    top: 0;
   }
 </style>

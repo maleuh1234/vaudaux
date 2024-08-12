@@ -3,7 +3,8 @@
 @tailwind utilities;
 @import url('./font.css');
 
-body {
+body, 
+html {
     font-size: 20px;
 }
 

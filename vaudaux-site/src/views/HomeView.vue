@@ -115,13 +115,17 @@ button {
   z-index: 5;
   transition: .3s;
   color: #fff;
-  font-size: 40px;
+  font-size: 1.3rem;
   letter-spacing: 5px;
   text-transform: uppercase;
 }
 
 .hp-button:hover {
   transform: scale(1.05);
+}
+
+.hp-button .arrow {
+  transform: scale(.7);
 }
 
 .button-right {
@@ -156,12 +160,30 @@ button {
 }
 
 
+@media screen and (max-width: 390px) {
+  .button-right {
+    bottom: 2.5rem;
+    right: 1rem;
+  }
+  
+  .button-left {
+    left: 1rem;
+  }
+
+}
 @media screen and (min-width: 1100px) {
   .home-h1 {
     font-size: 3.998rem;
     margin-top: 270px;
     margin-left: 20px;
     margin-right: 20px;
+  }
+
+  .hp-button {
+    font-size: 2rem;
+  }
+  .hp-button .arrow {
+    transform: scale(1);
   }
 }
 </style>

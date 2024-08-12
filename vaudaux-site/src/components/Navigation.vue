@@ -46,11 +46,11 @@
       pdfLink: '../assets/dpd/DPD-TALENTS.pdf',
       textes: {
         "fr-CH" : {
-            Actualite : "Actualité",
+            Actualite : "Creations",
             Presentation : "Présentation",            
         },
         "en-US" : {
-            Actualite : "News",
+            Actualite : "Creations",
             Presentation : "Presentation"
         }
       },

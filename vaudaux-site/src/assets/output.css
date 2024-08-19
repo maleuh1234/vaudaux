@@ -554,10 +554,125 @@ video {
   --tw-contain-style:  ;
 }
 
-.ml-16 {
-  margin-left: 4rem;
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+body, 
+html {
+  font-size: 15px;
+}
+
+* {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.page-header {
+  height: 230px;
+  position: relative;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1 {
-  color: red;
+  font-size: 1.999rem;
+  font-weight: 600;
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  color: #fff;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #7B6E68;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #7B6E68;
+}
+
+.intro-text {
+  margin: 100px 20px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 756px) {
+  body, 
+    html {
+    font-size: 20px;
+  }
+
+  .page-header {
+    height: 600px;
+  }
+
+  h1 {
+    font-size: 5.653rem;
+    bottom: 40px;
+    left: 60px;
+  }
+
+  h2 {
+    font-size: 3.5rem;
+    bottom: 40px;
+    left: 60px;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    bottom: 40px;
+    left: 60px;
+  }
+
+  .intro-text {
+    font-size: 1.999rem;
+    margin: 170px 30vw 170px 60px;
+  }
 }

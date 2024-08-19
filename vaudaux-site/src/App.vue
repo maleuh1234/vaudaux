@@ -4,18 +4,27 @@
       <RouterLink to="/"><img class="logo-home" ref="logo" src="./assets/logo.png" alt="Vaudaux" /></RouterLink>
     </div>
     <AppNavigation/>
-  </header>  <router-view/>
+  </header>  
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <router-view/>
+    </div>
+  </div>
 </template>
 
 <script>
-import AppNavigation from "./components/Navigation.vue"
+  import AppNavigation from "./components/Navigation.vue"
+  import { gsap } from 'gsap';
+  import { ScrollSmoother } from 'gsap/ScrollSmoother';
 
-export default {
-  name: 'layout',
-  components: {
-    AppNavigation
+  gsap.registerPlugin(ScrollSmoother);
+
+  export default {
+    name: 'layout',
+    components: {
+      AppNavigation
+    }
   }
-}
 </script>
 
 <style scoped>

@@ -12,10 +12,12 @@
       :to="{ name: 'product', params: { id: creation.sys.id }}" 
       class="creation"
     >
+    <div class="creation-img">
       <img 
         :src="creation.fields.imgs[0]?.fields.file.url" 
         :alt="creation.fields.titre"
       >
+    </div>
       <p>{{ creation.fields.titre }}</p>
     </RouterLink>
   </div>
@@ -63,6 +65,45 @@ export default {
 
 <style scoped>
 
+.creation {
+  margin-bottom: 5rem;
+}
 
+.creation-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+  grid-gap: 0;
+  max-width: 100vw;
+}
 
- </style>
+.creation-img {
+  width: 100%;
+  aspect-ratio: 5/6;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 765px) {
+  .line-item {
+    width: 100%;
+  }
+  .creation {
+    margin-bottom: 3.5rem;
+  }
+  .creation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 340px);
+    grid-gap: 1rem;
+    width: fit-content;
+    margin: 5rem auto;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .creation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 375px);
+    grid-gap: 2rem;
+  }
+}
+
+</style>

@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="logo-aligner">
-      <RouterLink to="/"><img class="logo-home" ref="logo" src="./assets/logo.png" alt="Vaudaux" /></RouterLink>
+      <RouterLink class="logo-home-link" to="/"><img class="logo-home" ref="logo" src="./assets/logo.png" alt="Vaudaux" /></RouterLink>
     </div>
     <AppNavigation/>
   </header>  
@@ -32,9 +32,19 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    max-width: 100vw;
+    height: 10rem;
     padding-left: 3vw;
     z-index: 3;
+  }
+
+  .logo-home-link {
+    height: 8rem;
+  }
+  
+  .logo-home {
+    width: 8rem;
+    height: auto;
   }
 
   header {

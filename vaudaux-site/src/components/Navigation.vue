@@ -11,8 +11,8 @@
   <div class="opened-burger" :class="{ 'active': isToggled }">
     <RouterLink @click="closeMenu" to="'/'"><img class="nav-logo" src="../assets/logo.png" alt="Talents"></RouterLink>
     <nav class="main-nav">
-      <RouterLink @click="closeMenu" to="/">Home</RouterLink>
-      <RouterLink @click="closeMenu" to="/creations">{{textes[currentLang].Actualite}}</RouterLink>
+      <RouterLink @click="closeMenu" to="/">{{textes[currentLang].Home}}</RouterLink>
+      <RouterLink @click="closeMenu" to="/creations">{{textes[currentLang].Crea}}</RouterLink>
       <RouterLink @click="closeMenu" to="/presentation">{{textes[currentLang].Presentation}}</RouterLink>
       <RouterLink @click="closeMenu" to="/contact">Contact</RouterLink>
       <div class="language-changer">
@@ -46,12 +46,14 @@
       pdfLink: '../assets/dpd/DPD-TALENTS.pdf',
       textes: {
         "fr-CH" : {
-            Actualite : "Creations",
-            Presentation : "Présentation",            
+            Home: "Home FR",
+            Crea : "Creations FR",
+            Presentation : "Présentation FR",            
         },
         "en-US" : {
-            Actualite : "Creations",
-            Presentation : "Presentation"
+            Home: "Home US",
+            Crea : "Creations US",
+            Presentation : "Presentation US"
         }
       },
       currentLang: localStorage.getItem('Language') || 'fr-CH'
@@ -61,11 +63,9 @@
     setLanguageFR(){
       localStorage.setItem('Language', "fr-CH");
       location.reload();
-      console.log(localStorage.getItem("Language"))
     },
     setLanguageEN(){
       localStorage.setItem('Language', "en-US");
-      console.log(localStorage.getItem("Language"))
       location.reload();
     },
     toggleMenu() {

@@ -1,9 +1,9 @@
 <template>
   <header>
-    <div class="logo-aligner">
+    <div class="logo-aligner"  v-if="!isProductRoute">
       <RouterLink class="logo-home-link" to="/"><img class="logo-home" ref="logo" src="./assets/logo.png" alt="Vaudaux" /></RouterLink>
     </div>
-    <AppNavigation/>
+    <AppNavigation v-if="!isProductRoute"/>
   </header>  
   <div id="smooth-wrapper">
     <div id="smooth-content">
@@ -23,6 +23,12 @@
     name: 'layout',
     components: {
       AppNavigation
+    },
+    computed: {
+      // Propriété calculée pour vérifier si la route est la page produit
+      isProductRoute() {
+        return this.$route.name === 'product';  // Vérifie si la route est '/creations/:id'
+      }
     }
   }
 </script>

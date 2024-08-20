@@ -28,15 +28,15 @@
           <p>La confection de petites et moyennes maroquineries se nourrie de matières nobles et tout spécialement sélectionnées et choisies. Les finitions élégantes et les détails chics naissent du savoir-faire de nos artisans.</p>
         </div>
       </div>
-      <div data-speed="1.6" class="savoir-item creation">
+      <div data-speed="1.5" class="savoir-item creation">
         <div class="texts">
           <h3>Création & design</h3>
           <p>Notre studio est très à l’écoute afin d’identifier et de s’imprégner de la quintessence des Maisons pour lesquelles nous créons. Nous sommes fiers de savoir préserver et mettre en valeur l’identité de chaque marque.</p>
         </div>
         <svg width="104" height="152" viewBox="0 0 104 152" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28.125 134.051V122.625H74.707V134.051C74.707 135.809 74.1211 137.566 73.2422 139.324L68.2617 146.648C66.5039 149.285 63.5742 151.043 60.3516 151.043H42.4805C39.2578 151.043 36.3281 149.285 34.5703 146.648L29.5898 139.324C28.418 137.566 28.125 135.809 28.125 134.051ZM0 52.3125C0 25.0664 21.3867 1.04297 51.2695 0.75C79.6875 0.75 103.125 23.8945 103.125 52.3125C103.125 65.4961 98.1445 77.2148 90.2344 86.2969C85.2539 91.8633 77.9297 103.582 75 113.25C75 113.25 75 113.25 75 113.543H27.832C27.832 113.25 27.832 113.25 27.832 113.25C24.9023 103.582 17.5781 91.8633 12.5977 86.2969C4.6875 77.2148 0 65.4961 0 52.3125ZM51.5625 28.875C53.9062 28.875 56.25 26.8242 56.25 24.1875C56.25 21.8438 53.9062 19.5 51.5625 19.5C33.3984 19.5 18.75 34.4414 18.75 52.3125C18.75 54.9492 20.8008 57 23.4375 57C25.7812 57 28.125 54.9492 28.125 52.3125C28.125 39.4219 38.3789 28.875 51.5625 28.875Z" fill="#7B6E68"/></svg>
       </div>
-      <div data-speed="1.8" class="savoir-item ">
-        <div data-speed="1.5" class="menuiserie">
+      <div data-speed="1.4" class="savoir-item ">
+        <div class="menuiserie">
           <h3>Menuiserie</h3>
           <p>Notre Atelier de menuiserie élabore nos bases dans la tradition ancestrale de nos compagnons. Authenticité et rigueur se mêlent à l’originalité et à la pertinence de nos savoir-faire.</p>
         </div>
@@ -105,7 +105,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
 .page-header {
   background-image: url(../assets/images-home/atelier.webp);
 }

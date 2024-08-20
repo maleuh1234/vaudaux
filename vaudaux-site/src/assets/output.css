@@ -566,8 +566,16 @@ video {
   position: relative;
 }
 
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
 }
 
 .hidden {
@@ -576,6 +584,10 @@ video {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.resize {
+  resize: both;
 }
 
 .uppercase {
@@ -616,12 +628,24 @@ html {
   background-repeat: no-repeat;
 }
 
+.button {
+  position: relative;
+  top: 2.5rem;
+  color: #fff;
+  background-color: #7B6E68;
+  padding: .8rem 1.5rem;
+  transition: .4s;
+  border: 1.5px solid #7B6E68;
+}
+
+.button:hover {
+  color: #7B6E68;
+  background-color: #fff;
+}
+
 h1 {
   font-size: 1.999rem;
   font-weight: 600;
-  position: absolute;
-  bottom: 15px;
-  left: 20px;
   color: #fff;
 }
 
@@ -661,14 +685,10 @@ h3 {
 
   h2 {
     font-size: 3.5rem;
-    bottom: 40px;
-    left: 60px;
   }
 
   h3 {
     font-size: 2.5rem;
-    bottom: 40px;
-    left: 60px;
   }
 
   .intro-text {

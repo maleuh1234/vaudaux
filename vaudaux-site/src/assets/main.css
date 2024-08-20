@@ -43,9 +43,6 @@ html {
   h1 {
     font-size: 1.999rem;
     font-weight: 600;
-    position: absolute;
-    bottom: 15px;
-    left: 20px;
     color: #fff;
   }
   
@@ -79,25 +76,22 @@ html {
     
     h1 {
       font-size: 5.653rem;
+      position: absolute;
+      bottom: 15px;
+      left: 20px;
       bottom: 40px;
       left: 60px;
     }
     
     h2 {
       font-size: 3.5rem;
-      bottom: 40px;
-      left: 60px;
     }
     
     h3 {
       font-size: 2.5rem;
-      bottom: 40px;
-      left: 60px;
     }
   .intro-text {
     font-size: 1.999rem;
     margin: 170px 30vw 170px 60px;
-    }
-  
-    
+    }    
   }

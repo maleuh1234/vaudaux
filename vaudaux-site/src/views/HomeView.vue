@@ -2,9 +2,9 @@
   <div class="home-page-background">
       <div class="background-layer" :style="{ backgroundImage: `url(${defaultImageUrl})` }"></div>
       <div class="foreground-layer" ref="foregroundLayer"></div>      
-      <h1 class="home-h1">Texte concernant l'actualité de vaudaux, le gainier depuis 1908</h1>
-      <RouterLink to="/presentation" class="hp-button playfair-display-semi-bold button-right" @mouseover="changeImage(imageUrl1)" @mouseleave="resetImage">presentation <span class="arrow"><svg width="24" height="38" viewBox="0 0 24 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 36L20 19L2 2" stroke="white" stroke-width="5"/></svg></span></RouterLink>
-      <RouterLink to="/creations" class="hp-button playfair-display-semi-bold button-left" @mouseover="changeImage(imageUrl2)" @mouseleave="resetImage"><span class="arrow"><svg width="24" height="38" viewBox="0 0 24 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 2L4 19L22 36" stroke="white" stroke-width="5"/></svg></span> creations</RouterLink>
+      <h1 class="home-h1">{{textes[currentLanguage].Title}}</h1>
+      <RouterLink to="/presentation" class="hp-button playfair-display-semi-bold button-right" @mouseover="changeImage(imageUrl1)" @mouseleave="resetImage">{{textes[currentLanguage].Pres}} <span class="arrow"><svg width="24" height="38" viewBox="0 0 24 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 36L20 19L2 2" stroke="white" stroke-width="5"/></svg></span></RouterLink>
+      <RouterLink to="/creations" class="hp-button playfair-display-semi-bold button-left" @mouseover="changeImage(imageUrl2)" @mouseleave="resetImage"><span class="arrow"><svg width="24" height="38" viewBox="0 0 24 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 2L4 19L22 36" stroke="white" stroke-width="5"/></svg></span> {{textes[currentLanguage].Crea}}</RouterLink>
   </div>
 </template>
 
@@ -16,6 +16,24 @@ import imageUrl1 from '@/assets/images-home/atelier.webp';
 import imageUrl2 from '@/assets/images-home/Papillion.webp';
 
 export default {
+  data() {
+    return {
+      currentLanguage: localStorage.getItem("Language") || "fr-CH",
+      textes: {
+        "fr-CH": {
+          Title: "Texte concernant l'actualité de vaudaux, le gainier depuis 1908 FR",
+          Pres: "Presentation FR",
+          Crea:"Créations FR",
+        },
+        "en-US": {
+          Title: "Texte concernant l'actualité de vaudaux, le gainier depuis 1908 US",
+          Pres: "Presnetation US",
+          Crea:"Créations US",
+        },
+      },
+      
+    };
+  },
   name: 'HomePage',
   setup() {
     const foregroundLayer = ref(null);

@@ -31,7 +31,7 @@ import contentfulClient from '@/contentfulClient.js';
 export default {
   data() {
     return {
-      currentLanguage: localStorage.getItem("Language") || "en-US",
+      currentLanguage: localStorage.getItem("Language") || "fr-CH",
       creations: [],
       textes: {
         "fr-CH": {

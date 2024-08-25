@@ -3,7 +3,7 @@
     <h1> {{textes[currentLanguage].Title}}  </h1>
   </div>
   <div>
-    <p class="intro-text">Introductions au créations</p>
+    <p class="intro-text">{{textes[currentLanguage].Intro}} </p>
   </div>
   <div class="creation-grid">
     <RouterLink 
@@ -36,9 +36,11 @@ export default {
       textes: {
         "fr-CH": {
           Title: "Creations",
+          Intro: "Introductions au créations fr",
         },
         "en-US": {
           Title: "Creations",
+          Intro: "Introductions au créations en",
         },
       },
       

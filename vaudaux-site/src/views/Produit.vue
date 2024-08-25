@@ -1,5 +1,5 @@
 <template>
-  <button @click="goBack" class="back-button"><svg width="17" height="29" viewBox="0 0 17 29" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.6 2L3 14.6L15.6 27.2" stroke="black" stroke-width="3.57"/></svg><span>Retour</span></button>
+  <button @click="goBack" class="back-button"><svg width="17" height="29" viewBox="0 0 17 29" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.6 2L3 14.6L15.6 27.2" stroke="black" stroke-width="3.57"/></svg><span>{{textes[currentLanguage].Bouton}}</span></button>
     <div class="product-page">
       <div class="text-container">
         <h1>{{ product.titre }}</h1>
@@ -25,6 +25,15 @@ export default {
   data() {
     return {
       product: {},
+      currentLanguage: localStorage.getItem("Language") || "fr-CH",
+      textes: {
+        "fr-CH": {
+          Bouton: "Retour",
+        },
+        "en-US": {
+          Bouton: "Back",
+        },
+      },
     };
   },
   async created() {

@@ -11,6 +11,7 @@
     "contentful": "^10.13.2",
     "core-js": "^3.8.3",
     "gsap": "file:gsap-bonus.tgz",
+    "sweetalert2": "^11.12.4",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
   },

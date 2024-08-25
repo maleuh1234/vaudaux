@@ -554,6 +554,10 @@ video {
   --tw-contain-style:  ;
 }
 
+.static {
+  position: static;
+}
+
 .fixed {
   position: fixed;
 }
@@ -647,6 +651,8 @@ h1 {
   font-size: 1.999rem;
   font-weight: 600;
   color: #fff;
+  left: 20px;
+  bottom: 40px;
 }
 
 h2 {
@@ -679,6 +685,7 @@ h3 {
 
   h1 {
     font-size: 5.653rem;
+    position: absolute;
     bottom: 40px;
     left: 60px;
   }

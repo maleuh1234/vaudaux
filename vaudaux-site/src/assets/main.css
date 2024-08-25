@@ -44,6 +44,8 @@ html {
     font-size: 1.999rem;
     font-weight: 600;
     color: #fff;
+    left: 20px;
+    bottom: 40px;
   }
   
   h2 {
@@ -90,8 +92,9 @@ html {
     h3 {
       font-size: 2.5rem;
     }
-  .intro-text {
-    font-size: 1.999rem;
-    margin: 170px 30vw 170px 60px;
+
+    .intro-text {
+      font-size: 1.999rem;
+      margin: 170px 30vw 170px 60px;
     }    
   }

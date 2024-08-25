@@ -55,9 +55,9 @@
     <div>
       <h2>Réalisations</h2>
       <p>Depuis plus d’un siècle, les artisans de la maison perpétuent leur savoir-faire, toujours soucieux du détail, de la délicatesse des coupes et des assemblages, offrant une qualité sans égale aux écrins et autres présentoirs qui mettront en valeur des objets de haute horlogerie ou joaillerie.</p>
-      <RouterLink to="/creations" class="button">Voir nos Réalisations</RouterLink>
+      <RouterLink to="/creations" class="button">Voir nos créations</RouterLink>
     </div>
-    <img src="../assets/images-home/atelier.webp" alt="">
+    <img src="../assets/images-home/boite-real.jpg" alt="">
   </div>
   <leFooter/>
 </template>

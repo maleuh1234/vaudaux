@@ -65,6 +65,14 @@ export default {
 
 <style scoped>
 
+.page-header {
+  background-image: url(../assets/images-home/Papillion.webp);
+}
+
+h1 {
+  position: absolute;
+}
+
 .creation {
   margin-bottom: 5rem;
 }
@@ -80,6 +88,11 @@ export default {
   width: 100%;
   aspect-ratio: 5/6;
   overflow: hidden;
+  transition: .5s;
+}
+
+.creation-img:hover {
+  transform: scale(1.01);
 }
 
 @media screen and (min-width: 765px) {

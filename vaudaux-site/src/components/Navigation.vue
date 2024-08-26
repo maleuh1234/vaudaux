@@ -3,7 +3,7 @@
   <div class="burger" ref="burger" @click="toggleMenu" @mouseover="animateOnHover(true)" @mouseout="animateOnHover(false)">
     <div class="bread-container">
       <div class="bread1" ref="bread1"></div>
-      <div class="bread2" ref="bread2"></div>
+      <div class="bread3" ref="bread2"></div>
       <div class="bread3" ref="bread3"></div>
     </div>
     <div class="burger-background" ref="burgerBackground"></div>
@@ -46,14 +46,14 @@
       pdfLink: '../assets/dpd/DPD-TALENTS.pdf',
       textes: {
         "fr-CH" : {
-            Home: "Home FR",
-            Crea : "Creations FR",
-            Presentation : "Présentation FR",            
+            Home: "Accueil",
+            Crea : "Créations",
+            Presentation : "Présentation",            
         },
         "en-US" : {
-            Home: "Home US",
-            Crea : "Creations US",
-            Presentation : "Presentation US"
+            Home: "Home",
+            Crea : "Creations",
+            Presentation : "Presentation"
         }
       },
       currentLang: localStorage.getItem('Language') || 'fr-CH'
@@ -187,7 +187,7 @@ closeMenu() {
     border-radius: 100%;
     height: 0px;
     width: 0px;
-    background-color: #151515;
+    background-color: #7B6E68;
     transform-origin: center;
     position: absolute;
     z-index: 6;

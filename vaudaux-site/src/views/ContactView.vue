@@ -9,10 +9,8 @@
       <p>1204 Genève</p>
       <p class="special-margin">SWITZERLAND</p>
       <p>
-        TEL
-        <a href="tel:+41229390500">+41 (0)22 939 05 00</a>
         {{textes[currentLang].telephone}}
-        <a href="tel:+41223186040">+41 (0)22 318 60 40</a>
+        <a href="tel:+41229390500">+41 22 939 05 00</a>
       </p>
       <p>
         MAIL :
@@ -82,29 +80,14 @@
             v-model="form.texte_demande"
             required
           ></textarea>
-          <button class="arrow-button" type="submit">
+          <button class="button" type="submit">
             {{ textes[currentLang].envoyer }}
-            <svg
-              width="56"
-              height="12"
-              viewBox="0 0 56 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M38.6341 2L52 11H38.6341V2Z" fill="black" />
-              <path
-                d="M0 11H38.6341M38.6341 11H52L38.6341 2V11Z"
-                stroke="black"
-                stroke-width="2"
-              />
-            </svg>
           </button>
         </div>
       </div>
     </form>
   </div>
-
-
+  <leFooter/>
 </template>
 
 <script>
@@ -221,6 +204,10 @@ methods: {
     },
   },
 }
+</script>
+
+<script setup>
+  import leFooter from "../components/Footer.vue";
 </script>
 
 <style scoped>

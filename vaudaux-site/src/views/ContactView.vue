@@ -10,20 +10,19 @@
       <p class="special-margin">SWITZERLAND</p>
       <p>
         TEL
-        <a href="tel:+41223186040">+41 (0)22 318 60 40</a>
+        <a href="tel:+41229390500">+41 (0)22 939 05 00</a>
       </p>
       <p>
         MAIL :
-        <a href="mailto:talents@talents-ge.com">talents@talents-ge.com</a>
+        <a href="mailto:info@vaudaux-ge.com">info@vaudaux-ge.com</a>
       </p>
       <p>
         INSTAGRAM :
         <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjd-6r-5ueHAxVXgP0HHfeTJe0QFnoECDUQAQ&url=https%3A%2F%2Fwww.instagram.com%2Fvaudaux_geneve%2F%3Fhl%3Den&usg=AOvVaw17Vde3T55hhKBrugiPBZr5&opi=89978449"
-          >@vaudaux_geneve</a
-        >
+          >@vaudaux_geneve</a>
       </p>
     </div>
-    <img src="../assets/images-home/atelier.webp" alt="extérieur de la boutique" />
+    <img src="../assets/images-home/Plan.png" alt="extérieur de la boutique"/>
   </div>
 </template>
 

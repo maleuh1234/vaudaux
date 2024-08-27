@@ -160,7 +160,7 @@ onMounted(() => {
 
 <style scoped>
 .page-header {
-  background-image: url(../assets/images-home/atelier.webp);
+  background-image: url(../assets/images-home/0K6A1107.jpg);
 }
 
 .intro-text {

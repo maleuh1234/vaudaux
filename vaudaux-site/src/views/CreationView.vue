@@ -35,12 +35,12 @@ export default {
       creations: [],
       textes: {
         "fr-CH": {
-          Title: "Creations",
-          Intro: "Introductions au créations fr",
+          Title: "Créations",
+          Intro: "Depuis plus d’un siècle, nos artisans de la maison perpétuent leur savoir-faire, toujours soucieux du détail, de la délicatesse des coupes et des assemblages, offrant une qualité sans égale aux écrins et autres présentoirs qui mettront en valeur les objets et l’identité de chaque marque des Maisons pour lesquelles nous créons. Les matières, soigneusement sélectionnées, bénéficient de finitions élégantes et soignées pour une harmonie toujours fonctionnelle.",
         },
         "en-US": {
           Title: "Creations",
-          Intro: "Introductions au créations en",
+          Intro: "For over a century, the artisans of our house have been passing down their expertise, always attentive to detail, the finesse of cuts and assemblies, offering unrivaled quality in the cases and other displays that showcase the objects and the identity of each brand for which we create. The carefully selected materials are enhanced by elegant and refined finishes, ensuring a harmonious yet functional result.",
         },
       },
       
@@ -68,7 +68,7 @@ export default {
 <style scoped>
 
 .page-header {
-  background-image: url(../assets/images-home/Papillion.webp);
+  background-image: url(../assets/images-home/0K6A9321.jpg);
 }
 
 h1 {

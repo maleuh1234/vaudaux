@@ -38,7 +38,9 @@ export default {
   },
   async created() {
     try {
-      const entry = await contentfulClient.getEntry(this.$route.params.id);
+      const entry = await contentfulClient.getEntry(this.$route.params.id, {
+      locale: this.currentLanguage
+      });
       this.product = entry.fields;
     } catch (error) {
       console.error("Erreur lors de la récupération du produit:", error);
@@ -48,7 +50,7 @@ export default {
     goBack() {
       window.history.go(-1);
     },
-  },
+  },
 };
 </script>
 
@@ -95,6 +97,8 @@ export default {
 
   .product-image:first-child {
     grid-column: span 2;
+    height: auto;
+    aspect-ratio: 1/1;
   }
 
   .product-grid {
@@ -105,7 +109,7 @@ export default {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 50vh;
+    height: 60vh;
     margin-bottom: 3rem;
   }
   
@@ -126,7 +130,7 @@ export default {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        height: 100%;
+        height: 50vh;
         margin-bottom: 0;
       }
 
@@ -145,7 +149,6 @@ export default {
       padding: 0 .3rem;
       display: grid;
       grid-template-columns: repeat(2, 47%);
-      grid-auto-rows: 19rem;
       grid-gap: 6%;
     }
 

@@ -5,8 +5,8 @@
   <div class="magic-aliner">
     <div class="text-container">
       <h2>{{textes[currentLang].titre}}</h2>
-      <p>Rue de la Corraterie 20</p>
-      <p>1204 Genève</p>
+      <p>Av Louis-Pictet 9 </p>
+      <p>1214 Vernier</p>
       <p class="special-margin">SWITZERLAND</p>
       <p>
         {{textes[currentLang].telephone}}

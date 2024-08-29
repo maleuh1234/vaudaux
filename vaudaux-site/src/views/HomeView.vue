@@ -184,7 +184,7 @@ button {
 }
 
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 412px) {
   .button-right {
     bottom: 2.5rem;
     right: 1rem;

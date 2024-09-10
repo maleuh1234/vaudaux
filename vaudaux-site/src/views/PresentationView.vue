@@ -70,7 +70,7 @@ export default {
       textes: {
         "fr-CH": {
           PresentationTitle: "Présentation",
-          Introduction: "Introduction",
+          Introduction: "La gainerie est un artisanat ancien, qui consiste à couvrir quelque chose de cuir ou de tissu pour l’anoblir. Lorsque ce métier est exercé comme un art, il devient l’indispensable compagnon du luxe. C’est le cas de Vaudaux, qui exerce cet art à Genève depuis 1908.",
           SavoirFaireTitle: "Savoir-faire",
           GainerieTitle: "Gainerie",
           GainerieDescription: "Nos artisans gainiers perpétuent l’unique savoir-faire VAUDAUX. Précision, souci du détail, délicatesse des coupes et des assemblages confèrent aux réalisations VAUDAUX une signature unique.",
@@ -91,7 +91,7 @@ export default {
         },
         "en-US": {
           PresentationTitle: "Presentation",
-          Introduction: "Introduction",
+          Introduction: "Leather crafting is an ancient craft, which involves covering something with leather or fabric to ennoble it. When this trade is practiced as an art, it becomes an essential companion of luxury. This is the case with Vaudaux, which has been practicing this art in Geneva since 1908.",
           SavoirFaireTitle: "Know-How",
           GainerieTitle: "Leather Craft",
           GainerieDescription: "Our craftsmen perpetuate the unique VAUDAUX know-how. Precision, attention to detail, delicate cuts, and assemblies give VAUDAUX creations a unique signature.",

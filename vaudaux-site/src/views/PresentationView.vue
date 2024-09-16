@@ -53,9 +53,9 @@
   </div>
   <div class="realisation-teaser">
     <div>
-      <h2>Réalisations</h2>
-      <p>Depuis plus d’un siècle, les artisans de la maison perpétuent leur savoir-faire, toujours soucieux du détail, de la délicatesse des coupes et des assemblages, offrant une qualité sans égale aux écrins et autres présentoirs qui mettront en valeur des objets de haute horlogerie ou joaillerie.</p>
-      <RouterLink to="/creations" class="button">Voir nos créations</RouterLink>
+      <h2>{{ textes[currentLanguage].RealisationTeaserTitle }}</h2>
+      <p>{{ textes[currentLanguage].RealisationTeaserDescription }}</p>
+      <RouterLink to="/creations" class="button">{{ textes[currentLanguage].RealisationTeaserButton }}</RouterLink>
     </div>
     <img src="../assets/images-home/boite-real.jpg" alt="">
   </div>
@@ -106,9 +106,9 @@ export default {
           AtelierTitle: "The Workshop",
           AtelierDescription1: "The Geneva Workshop employs around 35 highly skilled people dedicated to meeting the demands of its clients, from the creation of a unique piece to the production of small and medium series. The raw materials used include leather, exclusive fabrics, precious woods, noble metals, and modern, innovative materials.",
           AtelierDescription2: "In addition to its production facilities in Geneva, a partnership of more than 30 years has been established in China, ensuring high-quality production for the largest series at competitive prices. Additionally, and to better satisfy our partners, we have established our own production lines in Thailand and Spain.",
-          RealisationTeaserTitle: "Achievements",
+          RealisationTeaserTitle: "Creations",
           RealisationTeaserDescription: "For over a century, the craftsmen of the house have perpetuated their know-how, always attentive to detail, delicate cuts, and assemblies, offering unparalleled quality to the cases and other displays that will showcase fine watchmaking or jewelry pieces.",
-          RealisationTeaserButton: "See our Achievements",
+          RealisationTeaserButton: "See our Chreations",
         },
       },
     };

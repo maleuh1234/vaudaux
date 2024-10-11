@@ -11,7 +11,7 @@
 <script>
 import { ref, onMounted } from 'vue';
 import { gsap } from 'gsap';
-import defaultImageUrl from '@/assets/images-home/Luxepack.jpg';
+import defaultImageUrl from '@/assets/images-home/GPHG.jpg';
 import imageUrl1 from '@/assets/images-home/0K6A1107.jpg';
 import imageUrl2 from '@/assets/images-home/0K6A9321.jpg';
 
@@ -21,12 +21,12 @@ export default {
       currentLanguage: localStorage.getItem("Language") || "fr-CH",
       textes: {
         "fr-CH": {
-          Title: "LuxePack de Monaco, Retrouvez-nous pour cet événement incontournable du 30 Septembre au 02 Octobre 2024.",
+          Title: "Prestataire officiel du Grand Prix d’Horlogerie de Genève.",
           Pres: "Présentation",
           Crea:"Créations",
         },
         "en-US": {
-          Title: "LuxePack Monaco, Join us for this must-attend event from September 30th to October 2nd, 2024.",
+          Title: "Official Service Provider of the Grand Prix d'Horlogerie de Genève.",
           Pres: "Presentation",
           Crea:"creations",
         },

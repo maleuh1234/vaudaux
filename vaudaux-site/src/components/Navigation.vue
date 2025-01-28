@@ -206,7 +206,11 @@ closeMenu() {
     background: linear-gradient(to top, #000 0%, #000 2px, transparent 3px) no-repeat;
     background-size: 0% 100%;
     transition: 0.2s;
-    margin: 0 1rem;
+  }
+  
+  .legal {
+    font-size: 15px;
+    margin: 0 .5rem;
   }
 
   .main-nav > *:hover, 
@@ -262,7 +266,6 @@ closeMenu() {
     position: absolute;
     display: flex;
     bottom: .5rem;
-    font-size: 15px;
   }
 
   @media screen and (min-width: 1100px) {

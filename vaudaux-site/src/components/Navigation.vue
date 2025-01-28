@@ -21,7 +21,12 @@
       </div>
       <a class="instagram-link" href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjd-6r-5ueHAxVXgP0HHfeTJe0QFnoECDUQAQ&url=https%3A%2F%2Fwww.instagram.com%2Fvaudaux_geneve%2F%3Fhl%3Den&usg=AOvVaw17Vde3T55hhKBrugiPBZr5&opi=89978449" @click.stop><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
     </nav>
-    <a class="legal" href="https://docs.google.com/document/d/1yNKptiaNJa0ALBNIbpi0kIMzBW_Fpl0M/edit?usp=drive_link&ouid=117838288663904003205&rtpof=true&sd=true"  target="_blank" rel="noopener noreferrer">Mentions légales</a>  </div>
+    <div class="legal-container">
+      <a class="legal" href="https://docs.google.com/document/d/1yNKptiaNJa0ALBNIbpi0kIMzBW_Fpl0M/edit?usp=drive_link&ouid=117838288663904003205&rtpof=true&sd=true"  target="_blank" rel="noopener noreferrer">DPD</a>
+      <a class="legal" href="https://drive.google.com/file/d/1jBzMFWkYmC78Log4SKJVherXGsijwA3a/view?usp=sharing"  target="_blank" rel="noopener noreferrer">CGA</a>
+      <a class="legal" href="https://drive.google.com/file/d/1-T3CLFsDGciKRRTAILXQTTHd-gpWpyho/view?usp=sharing"  target="_blank" rel="noopener noreferrer">CGV</a>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -201,6 +206,7 @@ closeMenu() {
     background: linear-gradient(to top, #000 0%, #000 2px, transparent 3px) no-repeat;
     background-size: 0% 100%;
     transition: 0.2s;
+    margin: 0 1rem;
   }
 
   .main-nav > *:hover, 
@@ -252,8 +258,9 @@ closeMenu() {
     width: 0;
   }
   
-  .legal {
+  .legal-container {
     position: absolute;
+    display: flex;
     bottom: .5rem;
     font-size: 15px;
   }

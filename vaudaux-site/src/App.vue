@@ -27,7 +27,7 @@
     computed: {
       // Propriété calculée pour vérifier si la route est la page produit
       isProductRoute() {
-        return this.$route.name === 'product';  // Vérifie si la route est '/creations/:id'
+        return this.$route.name === 'product' || this.$route.name === 'legal';  // Vérifie si la route est '/creations/:id'
       }
     }
   }

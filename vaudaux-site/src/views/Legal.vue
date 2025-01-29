@@ -1,35 +1,16 @@
 <template>
-  <div class="spacer" ref="spacer"></div>
-  <div class="burger" ref="burger" @click="toggleMenu" @mouseover="animateOnHover(true)" @mouseout="animateOnHover(false)">
-    <div class="bread-container">
-      <div class="bread1" ref="bread1"></div>
-      <div class="bread3" ref="bread2"></div>
-      <div class="bread3" ref="bread3"></div>
-    </div>
-    <div class="burger-background" ref="burgerBackground"></div>
+  <div class="logo-aligner">
+    <img src="../assets/logoB.png" alt="Vaudaux">
   </div>
-  <div class="opened-burger" :class="{ 'active': isToggled }">
-    <RouterLink @click="closeMenu" to="'/'"><img class="nav-logo" src="../assets/logo.png" alt="Talents"></RouterLink>
+  <div class="spacer" ref="spacer"></div>
+  <div class="opened-burger">
     <nav class="main-nav">
-      <RouterLink @click="closeMenu" to="/">{{textes[currentLang].Home}}</RouterLink>
-      <RouterLink @click="closeMenu" to="/creations">{{textes[currentLang].Crea}}</RouterLink>
-      <RouterLink @click="closeMenu" to="/presentation">{{textes[currentLang].Presentation}}</RouterLink>
-      <RouterLink @click="closeMenu" to="/contact">Contact</RouterLink>
-      <div class="language-changer">
-        <button  @click="setLanguageFR">FR</button>
-        <button  @click="setLanguageEN">EN</button>
-      </div>
-      <a class="instagram-link" href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjd-6r-5ueHAxVXgP0HHfeTJe0QFnoECDUQAQ&url=https%3A%2F%2Fwww.instagram.com%2Fvaudaux_geneve%2F%3Fhl%3Den&usg=AOvVaw17Vde3T55hhKBrugiPBZr5&opi=89978449" @click.stop><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+      <a class="" href="https://docs.google.com/document/d/1yNKptiaNJa0ALBNIbpi0kIMzBW_Fpl0M/edit?usp=drive_link&ouid=117838288663904003205&rtpof=true&sd=true"  target="_blank" rel="noopener noreferrer">Déclaration de protection des données</a>
+      <a class="" href="https://drive.google.com/file/d/1jBzMFWkYmC78Log4SKJVherXGsijwA3a/view?usp=sharing"  target="_blank" rel="noopener noreferrer">Conditions générales d'achat</a>
+      <a class="" href="https://drive.google.com/file/d/1-T3CLFsDGciKRRTAILXQTTHd-gpWpyho/view?usp=sharing"  target="_blank" rel="noopener noreferrer">Conditions générales de vente</a>
     </nav>
-    <div class="legal-container">
-      <RouterLink @click="closeMenu" to="/legal" class="legal" target="_blank" rel="noopener noreferrer">{{textes[currentLang].legal}}</RouterLink>
-    </div>
   </div>
 </template>
-
-<script setup>
-import { RouterLink } from 'vue-router';
-</script>
 
 <script>
   import { ref, } from 'vue'
@@ -39,7 +20,7 @@ import { RouterLink } from 'vue-router';
   gsap.registerPlugin(ScrollTrigger);
 
   export default {
-    name: 'AppNavigation',
+    name: 'LegalView',
   data() {
     return {
       isToggled: ref(false),
@@ -54,13 +35,11 @@ import { RouterLink } from 'vue-router';
             Home: "Accueil",
             Crea : "Créations",
             Presentation : "Présentation",            
-            legal : "Mentions légales"            
         },
         "en-US" : {
             Home: "Home",
             Crea : "Creations",
-            Presentation : "Presentation",
-            legal : "Legal Mentions"
+            Presentation : "Presentation"
         }
       },
       currentLang: localStorage.getItem('Language') || 'fr-CH'
@@ -149,62 +128,11 @@ closeMenu() {
 </script>
 
 <style scoped>
-  .instagram-link *{
-    aspect-ratio: 1/1;
-    width: 40px;
-  }
-  .burger {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 75px;
-    width: 75px;
-    cursor: pointer;
-  }
-
-  .bread-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    z-index: 8;
-  }
-
-  .bread-container > * {
-    height: 3px;
-    background-color: #fff;
-    margin-bottom: 5px;
-  }
-
-  .bread1 {
-    width: 45px;
-  } 
-  .bread2 {
-      width: 30px;
-  } 
-  .bread3 {
-      width: 45px;
-  } 
-
-  .burger-background {
-    border-radius: 100%;
-    height: 0px;
-    width: 0px;
-    background-color: #7B6E68;
-    transform-origin: center;
-    position: absolute;
-    z-index: 6;
-  }
-  
-  .main-nav > *, 
+  .main-nav > *,
   .main-nav button,
   .legal {
     color: #000;
-    font-size: 32px;
+    font-size: 17px;
     font-style: italic;
     margin-bottom: 1rem;
     background: linear-gradient(to top, #000 0%, #000 2px, transparent 3px) no-repeat;
@@ -212,25 +140,12 @@ closeMenu() {
     transition: 0.2s;
   }
   
-  .legal {
-    font-size: 15px;
-    margin: 0 .5rem;
-  }
-
   .main-nav > *:hover, 
   .main-nav button:hover,
   .legal:hover {
     background-size: 100% 100%;
   }
 
-  .language-changer {
-    background: none;
-  }
-
-  .main-nav button {
-    font-variant: small-caps;
-    margin: 0 .5rem;
-  }
   .main-nav {
     display: flex;
     flex-direction: column;
@@ -245,19 +160,19 @@ closeMenu() {
     top: 0;
     left: 0;
     z-index: 7;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .opened-burger.active {
-    display: flex;
-  }
-
-  .nav-logo {
-    height: 25px;
+  .logo-aligner {
+    height: 45;
     position: absolute;
-    top: 40px;
+    top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000000;
   }
 
   .spacer {
@@ -265,16 +180,17 @@ closeMenu() {
     height: 230px;
     width: 0;
   }
-  
-  .legal-container {
-    position: absolute;
-    display: flex;
-    bottom: .5rem;
-  }
 
   @media screen and (min-width: 1100px) {
-    .nav-logo {
-    height: 40px;
+    .logo-aligner {
+    height: 100px;
+  }
+
+  .main-nav > *, 
+  .main-nav button,
+  .legal {
+    color: #000;
+    font-size: 32px;
   }
 
   .spacer {

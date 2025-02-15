@@ -138,7 +138,7 @@ button {
   bottom: 5rem;
   z-index: 5;
   transition: .3s;
-  color: #fff;
+  color: #000;
   font-size: 1.3rem;
   letter-spacing: 5px;
   text-transform: uppercase;

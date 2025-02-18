@@ -6,7 +6,7 @@
   <div class="opened-burger">
     <nav class="main-nav">
       <a class="" href="https://docs.google.com/document/d/1yNKptiaNJa0ALBNIbpi0kIMzBW_Fpl0M/edit?usp=drive_link&ouid=117838288663904003205&rtpof=true&sd=true"  target="_blank" rel="noopener noreferrer">Déclaration de protection des données</a>
-      <a class="" href="https://drive.google.com/file/d/1jBzMFWkYmC78Log4SKJVherXGsijwA3a/view?usp=sharing"  target="_blank" rel="noopener noreferrer">Conditions générales d'achat</a>
+      <a class="" href="https://drive.google.com/file/d/1L-4XMz_uObfpvOSF1Ge4Qw1RN7yJnkdO/view?usp=sharing"  target="_blank" rel="noopener noreferrer">Conditions générales d'achat</a>
       <a class="" href="https://drive.google.com/file/d/1-T3CLFsDGciKRRTAILXQTTHd-gpWpyho/view?usp=sharing"  target="_blank" rel="noopener noreferrer">Conditions générales de vente</a>
     </nav>
   </div>

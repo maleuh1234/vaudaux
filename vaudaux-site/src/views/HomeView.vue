@@ -1,6 +1,9 @@
 <template>
   <div class="home-page-background">
-      <div class="background-layer" :style="{ backgroundImage: `url(${defaultImageUrl})` }"></div>
+      <div class="background-layer" :style="{ backgroundImage: `url(${defaultImageUrl})` }">
+        <img src="../assets/images-home/EPHJ-logo.png" alt="">
+        <img src="../assets/images-home/texte-EPHJ2.png" alt="">
+      </div>
       <div class="foreground-layer" ref="foregroundLayer"></div>      
       <!-- <h1 class="home-h1" ref="enTete">{{textes[currentLanguage].Title}}</h1> -->
       <RouterLink to="/presentation" class="hp-button playfair-display-semi-bold button-right" @mouseover="changeImage(imageUrl1)" @mouseleave="resetImage">{{textes[currentLanguage].Pres}} <span class="arrow"><svg width="24" height="38" viewBox="0 0 24 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 36L20 19L2 2" stroke="white" stroke-width="5"/></svg></span></RouterLink>
@@ -105,6 +108,15 @@ export default {
   background-size: cover;
   background-position: center;
   transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.background-layer img {
+  width: 40%;
+  height: auto;
+  margin: 0 0 60px 10%;
 }
 
 .foreground-layer {
@@ -205,6 +217,11 @@ button {
   }
   .hp-button .arrow {
     transform: scale(1);
+  }
+  .background-layer img {
+    width: 30%;
+    height: auto;
+    margin: 0 0 60px 10%;
   }
 }
 </style>

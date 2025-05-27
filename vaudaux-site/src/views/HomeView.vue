@@ -1,7 +1,7 @@
 <template>
   <div class="home-page-background">
       <div class="background-layer" :style="{ backgroundImage: `url(${defaultImageUrl})` }">
-        <img src="../assets/images-home/EPHJ-logo.png" alt="">
+        <img class="logo-ephj" src="../assets/images-home/EPHJ-logo.png" alt="">
         <img src="../assets/images-home/texte-EPHJ2.png" alt="">
       </div>
       <div class="foreground-layer" ref="foregroundLayer"></div>      
@@ -222,6 +222,11 @@ button {
     width: 30%;
     height: auto;
     margin: 0 0 60px 10%;
+  }
+  .logo-ephj {
+    width: 20% !important;
+    margin-bottom: 20px;
+    margin-left: 13% !important;
   }
 }
 </style>

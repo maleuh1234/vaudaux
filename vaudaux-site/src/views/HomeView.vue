@@ -114,7 +114,7 @@ export default {
 }
 
 .background-layer img {
-  width: 40%;
+  width: 100%;
   height: auto;
   margin: 0 0 60px 10%;
 }
@@ -219,7 +219,7 @@ button {
     transform: scale(1);
   }
   .background-layer img {
-    width: 30%;
+    width: 70%;
     height: auto;
     margin: 0 0 60px 10%;
   }

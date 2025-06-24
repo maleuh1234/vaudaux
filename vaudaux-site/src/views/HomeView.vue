@@ -14,7 +14,7 @@
 <script>
 import { ref, onMounted } from 'vue';
 import { gsap } from 'gsap';
-import defaultImageUrl from '@/assets/images-home/vaudauxbase2.jpg';
+import defaultImageUrl from '@/assets/images-home/summer.jpg';
 import imageUrl1 from '@/assets/images-home/0K6A1107.jpg';
 import imageUrl2 from '@/assets/images-home/0K6A9321.jpg';
 
@@ -221,7 +221,7 @@ button {
   .background-layer img {
     width: 70%;
     height: auto;
-    margin: 0 0 60px 10%;
+    margin: 0 0 60px 0%;
   }
   .logo-ephj {
     width: 20% !important;

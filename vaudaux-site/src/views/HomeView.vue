@@ -9,7 +9,8 @@
       <RouterLink to="/presentation" class="hp-button playfair-display-semi-bold button-right" @mouseover="changeImage(imageUrl1)" @mouseleave="resetImage">{{textes[currentLanguage].Pres}} <span class="arrow"><svg width="24" height="38" viewBox="0 0 24 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 36L20 19L2 2" stroke="white" stroke-width="5"/></svg></span></RouterLink>
       <RouterLink to="/creations" class="hp-button playfair-display-semi-bold button-left" @mouseover="changeImage(imageUrl2)" @mouseleave="resetImage"><span class="arrow"><svg width="24" height="38" viewBox="0 0 24 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 2L4 19L22 36" stroke="white" stroke-width="5"/></svg></span> {{textes[currentLanguage].Crea}}</RouterLink>
   </div>
-</template>
+</template> 
+<!-- test -->
 
 <script>
 import { ref, onMounted } from 'vue';

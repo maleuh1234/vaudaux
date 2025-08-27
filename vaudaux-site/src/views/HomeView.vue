@@ -2,7 +2,7 @@
   <div class="home-page-background">
       <div class="background-layer" :style="{ backgroundImage: `url(${defaultImageUrl})` }">
          <!-- <img class="logo-ephj" src="../assets/images-home/EPHJ-logo.png" alt=""> -->
-        <img src="../assets/images-home/vaudauxbasetexte.png" alt=""> 
+        <img src="../assets/images-home/rentree-t.png" alt=""> 
       </div>
       <div class="foreground-layer" ref="foregroundLayer"></div>      
       <!-- <h1 class="home-h1" ref="enTete">{{textes[currentLanguage].Title}}</h1> -->
@@ -15,7 +15,7 @@
 <script>
 import { ref, onMounted } from 'vue';
 import { gsap } from 'gsap';
-import defaultImageUrl from '@/assets/images-home/summer.jpg';
+import defaultImageUrl from '@/assets/images-home/rentree.p.jpg';
 import imageUrl1 from '@/assets/images-home/0K6A1107.jpg';
 import imageUrl2 from '@/assets/images-home/0K6A9321.jpg';
 

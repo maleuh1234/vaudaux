@@ -15,7 +15,7 @@
 <script>
 import { ref, onMounted } from 'vue';
 import { gsap } from 'gsap';
-import defaultImageUrl from '@/assets/images-home/rentree.p.jpg';
+import defaultImageUrl from '@/assets/images-home/rentree-p.jpg';
 import imageUrl1 from '@/assets/images-home/0K6A1107.jpg';
 import imageUrl2 from '@/assets/images-home/0K6A9321.jpg';
 

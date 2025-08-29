@@ -194,7 +194,10 @@ button {
 
 .arrow {
   font-weight: 900;
-  fill: #000;
+}
+
+.arrow svg {
+    fill: #000;
 }
 
 

@@ -197,7 +197,7 @@ button {
 }
 
 .arrow svg {
-    fill: #000;
+    color: #000;
 }
 
 

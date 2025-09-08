@@ -229,10 +229,10 @@ button {
     margin: 0 0 60px 0%;
   }
   .logo-ephj {
-    width: 50% !important;
+    width: 65% !important;
     position: absolute;
     margin-bottom: 20px;
-    margin-left: 13% !important;
+    margin-left: 0 !important;
   }
 }
 </style>

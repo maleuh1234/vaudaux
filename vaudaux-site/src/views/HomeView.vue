@@ -1,7 +1,7 @@
 <template>
   <div class="home-page-background">
       <div class="background-layer" :style="{ backgroundImage: `url(${defaultImageUrl})` }">
-         <!-- <img class="logo-ephj" src="../assets/images-home/EPHJ-logo.png" alt=""> -->
+         <img class="logo-ephj" src="../assets/images-home/LuxepackTA.png" alt="">
         <img src="../assets/images-home/luxepackT.png" alt=""> 
       </div>
       <div class="foreground-layer" ref="foregroundLayer"></div>      

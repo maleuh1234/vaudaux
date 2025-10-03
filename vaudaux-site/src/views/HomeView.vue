@@ -15,7 +15,7 @@
 <script>
 import { ref, onMounted } from 'vue';
 import { gsap } from 'gsap';
-import defaultImageUrl from '@/assets/images-home/Luxepack.jpg';
+import defaultImageUrl from '@/assets/images-home/1920x1080-Oct-rose.jpg';
 import imageUrl1 from '@/assets/images-home/0K6A1107.jpg';
 import imageUrl2 from '@/assets/images-home/0K6A9321.jpg';
 

@@ -1,21 +1,24 @@
 <template>
   <div class="home-page-background">
       <div class="background-layer" :style="{ backgroundImage: `url(${defaultImageUrl})` }">
-         <img class="logo-ephj" src="../assets/images-home/LuxepackTA.png" alt="">
-        <img src="../assets/images-home/luxepackT.png" alt=""> 
+         <!-- <img class="logo-ephj" src="../assets/images-home/LuxepackTA.png" alt="">
+        <img src="../assets/images-home/luxepackT.png" alt="">  -->
       </div>
       <div class="foreground-layer" ref="foregroundLayer"></div>      
       <!-- <h1 class="home-h1" ref="enTete">{{textes[currentLanguage].Title}}</h1> -->
-      <RouterLink to="/presentation" class="hp-button playfair-display-semi-bold button-right" @mouseover="changeImage(imageUrl1)" @mouseleave="resetImage">{{textes[currentLanguage].Pres}} <span class="arrow"><svg width="24" height="38" viewBox="0 0 24 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 36L20 19L2 2" stroke="white" stroke-width="5"/></svg></span></RouterLink>
-      <RouterLink to="/creations" class="hp-button playfair-display-semi-bold button-left" @mouseover="changeImage(imageUrl2)" @mouseleave="resetImage"><span class="arrow"><svg width="24" height="38" viewBox="0 0 24 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 2L4 19L22 36" stroke="white" stroke-width="5"/></svg></span> {{textes[currentLanguage].Crea}}</RouterLink>
+      <RouterLink to="/presentation" class="hp-button button-right" @mouseover="changeImage(imageUrl1)" @mouseleave="resetImage">{{textes[currentLanguage].Pres}}</RouterLink>
+      <RouterLink to="/creations" class="hp-button button-left" @mouseover="changeImage(imageUrl2)" @mouseleave="resetImage">{{textes[currentLanguage].Crea}}</RouterLink>
   </div>
 </template> 
-<!-- test asdfasdf-->
-
 <script>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import { gsap } from 'gsap';
-import defaultImageUrl from '@/assets/images-home/1920x1080-Oct-rose.jpg';
+
+import defaultImageMobile from '@/assets/images-home/390x824-Oct-rose.jpg';
+import defaultImageTablet from '@/assets/images-home/768x1024-Oct-rose.jpg';
+import defaultImageDesktop from '@/assets/images-home/1440x900-Oct-rose.jpg';
+import defaultImageLarge from '@/assets/images-home/1920x1080-Oct-rose.jpg';
+
 import imageUrl1 from '@/assets/images-home/0K6A1107.jpg';
 import imageUrl2 from '@/assets/images-home/0K6A9321.jpg';
 
@@ -42,6 +45,20 @@ export default {
   setup() {
     const foregroundLayer = ref(null);
     const enTete = ref(null);
+    const defaultImageUrl = ref(defaultImageDesktop);
+
+     const updateBackground = () => {
+      const width = window.innerWidth;
+      if (width < 600) {
+        defaultImageUrl.value = defaultImageMobile;
+      } else if (width < 1024) {
+        defaultImageUrl.value = defaultImageTablet;
+      } else if (width < 1600) {
+        defaultImageUrl.value = defaultImageDesktop;
+      } else {
+        defaultImageUrl.value = defaultImageLarge;
+      }
+    };
 
     const changeImage = (newImageUrl) => {
       gsap.to(foregroundLayer.value, {
@@ -55,12 +72,12 @@ export default {
       gsap.to(enTete.value, { opacity: 0, duration: 0.3, delay: .2 });
     };
 
-    const resetImage = () => {
+     const resetImage = () => {
       gsap.to(foregroundLayer.value, { opacity: 0, duration: 0.3 });
-      gsap.to(enTete.value, { opacity: 1, duration: 0.3, delay: .2 });
+      gsap.to(enTete.value, { opacity: 1, duration: 0.3, delay: 0.2 });
     };
 
-    // Précharger les images au montage du composant
+    // --- Préchargement des images ---
     const preloadImage = (src) => {
       return new Promise((resolve) => {
         const img = new Image();
@@ -70,9 +87,19 @@ export default {
     };
 
     onMounted(async () => {
-      await preloadImage(defaultImageUrl);
-      await preloadImage(imageUrl1);
-      await preloadImage(imageUrl2);
+       updateBackground(); // Choisir l’image initiale
+        window.addEventListener('resize', updateBackground); // Réagir au redimensionnement
+
+        await preloadImage(defaultImageMobile);
+        await preloadImage(defaultImageTablet);
+        await preloadImage(defaultImageDesktop);
+        await preloadImage(defaultImageLarge);
+        await preloadImage(imageUrl1);
+        await preloadImage(imageUrl2);
+    });
+
+     onUnmounted(() => {
+      window.removeEventListener('resize', updateBackground);
     });
 
     return {
@@ -151,40 +178,19 @@ button {
   bottom: 5rem;
   z-index: 5;
   transition: .3s;
-  color: #000;
+  color: white;
   font-size: 1.3rem;
   letter-spacing: 5px;
   text-transform: uppercase;
+  background-color: rgb(174, 165, 151);
+  padding: 10px 20px;
+  border: 5px solid rgb(174, 165, 151);
 }
 
 .hp-button:hover {
-  transform: scale(1.05);
-}
-
-.hp-button .arrow {
-  transform: scale(.7);
-}
-
-.button-right {
-  right: 4rem;
-  transform-origin: right;
-}
-.button-right .arrow{
-  margin-left: 20px;
-  transition: .3s;
-}
-
-.button-left .arrow{
-  margin-right: 20px;
-  transition: .3s;
-}
-
-.button-right:hover .arrow{
-  margin-left: 30px;
-}
-
-.button-left:hover .arrow{
-  margin-right: 30px;
+  text-decoration: none;
+  color: rgb(174, 165, 151);
+  background-color: #fff;
 }
 
 .button-left {
@@ -192,23 +198,20 @@ button {
   transform-origin: left;
 }
 
-.arrow {
-  font-weight: 900;
-}
-
-.arrow svg {
-    color: #000;
+.button-right {
+  right: 4rem;
 }
 
 
 @media screen and (max-width: 412px) {
   .button-right {
-    bottom: 2.5rem;
+    bottom: 1rem;
     right: 1rem;
   }
   
   .button-left {
     left: 1rem;
+    bottom: 6rem;
   }
 
 }

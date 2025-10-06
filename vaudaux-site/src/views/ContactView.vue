@@ -73,13 +73,20 @@
             :placeholder="textes[currentLang].telephoneLabel"
             v-model="form.telephone"
           />
-          <textarea
+          <input
             class="contact-input w-full"
+            type="file"
+            id="fichier"
+            @change="handleFileUpload"
+          />
+          <textarea
+            class="contact-input textarea-fullwidth"
             id="texte_demande"
             :placeholder="textes[currentLang].texteDemande"
             v-model="form.texte_demande"
             required
           ></textarea>
+
           <button class="button" type="submit">
             {{ textes[currentLang].envoyer }}
           </button>
@@ -141,6 +148,10 @@ export default {
   },
 
 methods: {
+  handleFileUpload(event) {
+    this.form.fichier = event.target.files[0];
+  },
+
     submitForm() {
       if (
         !this.form.nom ||
@@ -163,6 +174,10 @@ methods: {
       formData.append("email", this.form.email);
       formData.append("telephone", this.form.telephone);
       formData.append("texte_demande", this.form.texte_demande);
+
+      if (this.form.fichier) {
+        formData.append("fichier", this.form.fichier);
+      }
 
       fetch("https://chattona.emf-informatique.ch/vaudaux/contact_form.php", {
         method: "POST",
@@ -310,6 +325,15 @@ a:hover {
 .magic-aliner .text-container {
   width: 100%;
 }
+
+/* Étend le champ de texte sur deux colonnes */
+.textarea-fullwidth {
+  width: 100%;
+  grid-column: span 2;
+  min-height: 200px; /* hauteur de base */
+  resize: vertical; /* permet à l’utilisateur d’ajuster la hauteur si besoin */
+}
+
 
 @media screen and (max-width: 1099px) {
   .contact-aligner {

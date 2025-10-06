@@ -5,11 +5,11 @@
 
 body, 
 html {
-    font-size: 15px;
+    font-size: 12px !important;
 }
 
 * {
-    font-family: "Playfair Display", serif;
+    font-family: "Arsenal", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -41,23 +41,26 @@ html {
   }
   
   h1 {
-    font-size: 1.999rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #fff;
     left: 20px;
     bottom: 40px;
+    font-family: "Libre Baskerville", serif;
   }
   
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #7B6E68;
+    font-family: "Libre Baskerville", serif;
   }
   
   h3 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: #7B6E68;
+    font-family: "Libre Baskerville", serif;
   }
   
   .intro-text {

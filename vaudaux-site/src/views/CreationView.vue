@@ -21,8 +21,11 @@
       <p>{{ creation.fields.titre }}</p>
     </RouterLink>
   </div>
+  <leFooter/>
 </template>
-
+<script setup>
+import leFooter from "../components/Footer.vue";
+</script>
 <script>
 import contentfulClient from '@/contentfulClient.js';
 

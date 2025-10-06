@@ -49,7 +49,7 @@
   }
   
   .logo-home {
-    width: 8rem;
+    width: 13rem;
     height: auto;
   }
 

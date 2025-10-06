@@ -218,6 +218,10 @@ onMounted(() => {
   display: none;
 }
 
+p {
+  font-size: 1.2rem;
+}
+
 @media screen and (min-width: 755px) {
   
   .gainerie, 
@@ -234,6 +238,7 @@ onMounted(() => {
   .atelier-aligner p {
     width: 49%;
   }
+
   
   .texts {
     width: 65%;

@@ -73,12 +73,12 @@
             :placeholder="textes[currentLang].telephoneLabel"
             v-model="form.telephone"
           />
-          <input
+          <!-- <input
             class="contact-input w-full"
             type="file"
             id="fichier"
             @change="handleFileUpload"
-          />
+          /> -->
           <textarea
             class="contact-input textarea-fullwidth"
             id="texte_demande"

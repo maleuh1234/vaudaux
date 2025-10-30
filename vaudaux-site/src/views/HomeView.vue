@@ -20,8 +20,8 @@ import defaultImageDesktop from '@/assets/images-home/1440x900-Halloween.jpg';
 import defaultImageLarge from '@/assets/images-home/1920x1080-Halloween.jpg';
 
 import imageUrl1 from '@/assets/images-home/0K6A1107.jpg';
-import imageUrl2 from '@/assets/images-home/0K6A9321.jpg';
-
+import imageUrl2 from '@/assets/images-home/0K6A9321.jpg'; 
+// TERST
 export default {
   data() {
     return {

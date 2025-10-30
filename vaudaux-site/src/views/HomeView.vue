@@ -14,10 +14,10 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import { gsap } from 'gsap';
 
-import defaultImageMobile from '@/assets/images-home/390x824-Oct-rose.jpg';
-import defaultImageTablet from '@/assets/images-home/768x1024-Oct-rose.jpg';
-import defaultImageDesktop from '@/assets/images-home/1440x900-Oct-rose.jpg';
-import defaultImageLarge from '@/assets/images-home/1920x1080-Oct-rose.jpg';
+import defaultImageMobile from '@/assets/images-home/390x824-Halloween.jpg';
+import defaultImageTablet from '@/assets/images-home/768x1024-Halloween.jpg';
+import defaultImageDesktop from '@/assets/images-home/1440x900-Halloween.jpg';
+import defaultImageLarge from '@/assets/images-home/1920x1080-Halloween.jpg';
 
 import imageUrl1 from '@/assets/images-home/0K6A1107.jpg';
 import imageUrl2 from '@/assets/images-home/0K6A9321.jpg';

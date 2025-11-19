@@ -179,7 +179,7 @@ methods: {
         formData.append("fichier", this.form.fichier);
       }
 
-      fetch("https://chattona.emf-informatique.ch/vaudaux/contact_form.php", {
+      fetch("https://api.claudemeylan.ch/vaudaux.php", {
         method: "POST",
         body: formData,
         headers: {

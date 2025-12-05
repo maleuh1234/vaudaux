@@ -11,7 +11,6 @@
   </div>
 </template> 
 <script>
-// asdf
 import { ref, onMounted, onUnmounted } from 'vue';
 import { gsap } from 'gsap';
 

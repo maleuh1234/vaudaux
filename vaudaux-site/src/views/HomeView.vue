@@ -14,10 +14,10 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import { gsap } from 'gsap';
 
-import defaultImageMobile from '@/assets/images-home/390x824-VSPack.jpg';
-import defaultImageTablet from '@/assets/images-home/768x1024-Vspack.jpg';
-import defaultImageDesktop from '@/assets/images-home/1440x900-VSpack.jpg';
-import defaultImageLarge from '@/assets/images-home/1920x1080-VSPack.jpg';
+import defaultImageMobile from '@/assets/images-home/390x824-Noel.jpg';
+import defaultImageTablet from '@/assets/images-home/768x1024-Noel.jpg';
+import defaultImageDesktop from '@/assets/images-home/1440x900-Noel.jpg';
+import defaultImageLarge from '@/assets/images-home/1920x1080-Noel.jpg';
 
 import imageUrl1 from '@/assets/images-home/0K6A1107.jpg';
 import imageUrl2 from '@/assets/images-home/0K6A9321.jpg'; 

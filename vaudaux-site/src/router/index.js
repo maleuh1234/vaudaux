@@ -6,6 +6,7 @@ import PresentationView from '../views/PresentationView.vue'
 import ProductView from '../views/Produit.vue'
 import LegalView from '../views/Legal.vue'
 import ValuesView from '../views/ValuesView.vue'
+import HistoryView from '../views/HistoryView.vue'
 
 const routes = [
   {
@@ -37,6 +38,11 @@ const routes = [
     path: '/values',
     name: 'values',
     component: ValuesView
+  },
+  {
+    path: '/history',
+    name: 'history',
+    component: HistoryView
   },
   {
     path: '/creations/:id',

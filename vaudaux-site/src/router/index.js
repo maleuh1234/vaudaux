@@ -7,6 +7,7 @@ import ProductView from '../views/Produit.vue'
 import LegalView from '../views/Legal.vue'
 import ValuesView from '../views/ValuesView.vue'
 import HistoryView from '../views/HistoryView.vue'
+import SavoirFaireView from '../views/SavoirFaireView.vue'
 
 const routes = [
   {
@@ -43,6 +44,11 @@ const routes = [
     path: '/history',
     name: 'history',
     component: HistoryView
+  },
+  {
+    path: '/knowHow',
+    name: 'Know-how',
+    component: SavoirFaireView
   },
   {
     path: '/creations/:id',

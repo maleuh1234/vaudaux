@@ -101,7 +101,7 @@
     }
 
     h1 { 
-        color: #aea59750;
+        color: #aea597;
         position: static;
         font-size: 38px;
         z-index: 1;
@@ -110,7 +110,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 0 100px;
+        padding: 0 15%;
     }
     .history-spacer.special{ 
         margin: 70px 0;
@@ -154,7 +154,37 @@
         max-width: 45%;
         margin: 10% 5%;
         font-size: 24px;
-        line-height: 38PX;
+        line-height: 38px;
     }
+
+    @media screen and (max-width: 768px) {
+        .history-container section.inverted,
+        .history-container section {
+            flex-direction: column-reverse;
+        }
+        section img,
+        section p {
+            width: 80%;
+            max-width: none;
+        }
+        .history-container h2 {
+            top: -60px;
+            font-size: 80px;
+        }
+        .history-container {
+            padding: 0 8%;
+        }
+    }
+    @media screen and (max-width: 420px) {
+        .history-container h2 {
+            top: -50px;
+            font-size: 60px;
+        }
+        section p {
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+
 
 </style>

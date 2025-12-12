@@ -1,37 +1,38 @@
 <template>
-  <div class="page-header">
-    <h1 data-speed="1.2">Contact</h1>
-  </div>
   <div class="magic-aliner">
     <div class="text-container">
       <h2>{{textes[currentLang].titre}}</h2>
-      <p>Av Louis-Pictet 9 </p>
-      <p>1214 Vernier</p>
-      <p class="special-margin">SWITZERLAND</p>
-      <p>
-        {{textes[currentLang].telephone}}
-        <a href="tel:+41229390500">+41 22 939 05 00</a>
-      </p>
-      <p>
-        MAIL :
+      <div class="info-container">
+        <div class="mini-title">Adresse</div>
+        <p>Av Louis-Pictet 9 </p>
+        <p>1214 Vernier (Suisse)</p>
+      </div>
+      <div class="info-container">
+        <div class="mini-title">{{textes[currentLang].telephone}}</div>
+        <a href="tel:+41229390500">+41 22 939 05 00</a> 
+      </div>
+      <div class="info-container">
+        <div class="mini-title">Mail</div>
         <a href="mailto:info@vaudaux-ge.com">info@vaudaux-ge.com</a>
-      </p>
-      <p>
-        INSTAGRAM :
-        <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjd-6r-5ueHAxVXgP0HHfeTJe0QFnoECDUQAQ&url=https%3A%2F%2Fwww.instagram.com%2Fvaudaux_geneve%2F%3Fhl%3Den&usg=AOvVaw17Vde3T55hhKBrugiPBZr5&opi=89978449"
-          >@vaudaux_geneve</a>
-      </p>
+      </div>
+      <div class="info-container">
+        <div class="mini-title">Horaires</div>
+        <p>Du lundi au vendredi</p>
+        <p>08h00-12h00 / 14h00-17h00</p>
+      </div>
     </div>
-    <img src="../assets/images-home/atelier.webp" alt="extérieur de la boutique" />
+    <img src="../assets/contact/map.png" alt="position de l'usine" />
   </div>
 
 
   <div class="contact-form">
-    <h2>{{ textes[currentLang].demandeContact }}</h2>
-    <form @submit.prevent="submitForm">
-      <div class="contact-aligner">
-        <div class="contact-column">
-          <div class="contact-aligner">
+    <img src="../assets/contact/form.png" alt="">
+    <div class="formulaire">
+
+      <h2>{{ textes[currentLang].demandeContact }}</h2>
+      <form @submit.prevent="submitForm">
+        <div class="contact-aligner">
+          <div class="smaller-input">
             <input
               class="contact-input contact-column-small"
               type="text"
@@ -49,6 +50,23 @@
               required
             />
           </div>
+          <div class="smaller-input">
+            <input
+            class="contact-input w-full"
+            type="email"
+            id="email"
+            :placeholder="textes[currentLang].email"
+            v-model="form.email"
+            required
+            />
+            <input
+            class="contact-input w-full"
+            type="text"
+            id="telephone"
+            :placeholder="textes[currentLang].telephoneLabel"
+            v-model="form.telephone"
+            />
+          </div>
           <input
             class="contact-input w-full"
             type="text"
@@ -56,43 +74,26 @@
             :placeholder="textes[currentLang].entreprise"
             v-model="form.entreprise"
           />
-          <input
-            class="contact-input w-full"
-            type="email"
-            id="email"
-            :placeholder="textes[currentLang].email"
-            v-model="form.email"
-            required
-          />
+            <!-- <input
+              class="contact-input w-full"
+              type="file"
+              id="fichier"
+              @change="handleFileUpload"
+            /> -->
+            <textarea
+              class="contact-input textarea-fullwidth"
+              id="texte_demande"
+              :placeholder="textes[currentLang].texteDemande"
+              v-model="form.texte_demande"
+              required
+            ></textarea>
+  
+            <button class="button" type="submit">
+              {{ textes[currentLang].envoyer }}
+            </button>
         </div>
-        <div class="contact-column">
-          <input
-            class="contact-input w-full"
-            type="text"
-            id="telephone"
-            :placeholder="textes[currentLang].telephoneLabel"
-            v-model="form.telephone"
-          />
-          <!-- <input
-            class="contact-input w-full"
-            type="file"
-            id="fichier"
-            @change="handleFileUpload"
-          /> -->
-          <textarea
-            class="contact-input textarea-fullwidth"
-            id="texte_demande"
-            :placeholder="textes[currentLang].texteDemande"
-            v-model="form.texte_demande"
-            required
-          ></textarea>
-
-          <button class="button" type="submit">
-            {{ textes[currentLang].envoyer }}
-          </button>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
   <leFooter/>
 </template>
@@ -105,7 +106,7 @@ export default {
     return {
       textes: {
         "fr-CH": {
-          titre: "Nos bureaux",
+          titre: "Notre bureau",
           telephone: "TEL :",
 
           //Pour le form
@@ -220,155 +221,162 @@ methods: {
   },
 }
 </script>
-
 <script setup>
   import leFooter from "../components/Footer.vue";
 </script>
 
 <style scoped>
-.page-header {
-  background-image: url(../assets/images-home/right.jpg);
-}
+  .magic-aliner,
+  .contact-form {
+    display: flex;
+    align-items: center;
+    background: #aea597;
+    margin: 100px 7%;
+    border-radius: 32px;
+    padding: 50px;
+    justify-content: space-between;
+    text-align: center;
+  }
 
-h1 {
-  position: absolute;
-}
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+  }
 
-.contact-form {
-  margin: 100px 20px;
-  position: relative;
-}
+  h2 {
+    color: #000;
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
 
-.arrow-button {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
+  .magic-aliner img {
+    width: 70%;
+  }
+  
+  .info-container {
+    margin-top: 30px;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+  }
 
-.arrow-button svg {
-  position: relative;
-  transition: 0.3s;
-  margin-right: 5px;
-}
+  .info-container p, 
+  .info-container a {
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+  }
 
-.arrow-button:hover svg {
-  transform: translateX(10px);
-}
+  .info-container a:hover {
+    text-decoration: none;
+  }
 
-.contact-aligner {
-  display: flex;
-  justify-content: space-between;
-}
-.contact-column {
-  width: 47%;
-}
-.contact-column-small {
-  width: 45%;
-}
+  .mini-title {
+    font-style: italic;
+    background-color: #aea597;
+    color: #fff;
+    position: absolute;
+    font-size: 20px;
+    top: -20px;
+    padding: 0 10px;
+  }
 
-.page-header {
-  background-image: url(../assets/images-home/right.jpg);
-}
+  .contact-form {
+    padding: 0;
+    overflow: hidden;
+  }
 
-h2 {
-  font-size: 2.827rem;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-}
+  .formulaire {
+    width: 50%;
+  }
 
-p {
-  margin-top: 0;
-  width: 100%;
-}
+  .contact-form img {
+    width: 50%;
+    margin: 0;
+  }
 
-.special-margin {
-  margin-bottom: 2rem;
-}
-
-a {
-  font-size: inherit;
-  color: inherit;
-  background: linear-gradient(to top, #000 0%, #000 2px, transparent 3px) no-repeat;
-  background-size: 0% 100%;
-  transition: 0.2s;
-}
-
-a:hover {
-  background-size: 100% 100%;
-}
-
-.contact-input {
-  border-bottom: 2px solid #7b6e68;
-  padding: 10px;
-  margin-top: 40px;
-}
-
-.contact-input ::placeholder {
-  color: #000;
-  opacity: 0.6;
-}
-
-.w-full {
-  width: 100%;
-}
-
-.magic-aliner {
-  display: flex;
-  flex-direction: column-reverse;
-  margin: 100px 20px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.magic-aliner img,
-.magic-aliner p,
-.magic-aliner .text-container {
-  width: 100%;
-}
-
-/* Étend le champ de texte sur deux colonnes */
-.textarea-fullwidth {
-  width: 100%;
-  grid-column: span 2;
-  min-height: 200px; /* hauteur de base */
-  resize: vertical; /* permet à l’utilisateur d’ajuster la hauteur si besoin */
-}
-
-
-@media screen and (max-width: 1099px) {
   .contact-aligner {
     display: flex;
     flex-direction: column;
-    justify-content: baseline;
-  }
-  .contact-column {
-    width: 70%;
-  }
-  .contact-column-small {
-    width: 100%;
+    align-items: center;
   }
 
-  .arrow-button {
-    position: static;
-    margin-top: 40px;
-  }
-}
-@media screen and (min-width: 1100px) {
-  .contact-form {
-    margin: 170px 60px;
+  .contact-aligner input, 
+  .contact-aligner textarea {
+    width: 50%;
+    margin-bottom: 20px;
+    height: 32px;
+    border-radius: 4px;
+    padding: 0 5px;
   }
 
-  .magic-aliner {
+  .smaller-input {
     display: flex;
-    flex-direction: row;
-    margin: 170px 60px;
-    position: relative;
+    justify-content: space-between;
+    width: 50%;
   }
 
-  .magic-aliner img,
-  .magic-aliner p,
-  .magic-aliner .text-container {
-    width: 49%;
+  .smaller-input input {
+    width: 48%;
   }
-}
+
+  .contact-aligner textarea {
+    height: 90px;
+  }
+  
+  .button {
+    background-color: #ffffff00;
+    color: #fff;
+    border: 1.5px solid #fff;
+    padding: 10px 50px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+    @media screen and (max-width: 768px) {
+      .magic-aliner {
+        flex-direction: column-reverse;
+      }
+      .contact-form {
+        flex-direction: column;
+      }
+
+      .text-container, 
+      .contact-aligner input, 
+      .smaller-input,
+      .formulaire,
+      .contact-aligner textarea {
+        width: 90%;    
+      }
+
+      .smaller-input input {
+        width: 48%;
+      }
+
+      .contact-aligner {
+        padding-bottom: 70px;
+      }
+      
+      .magic-aliner img, 
+      .contact-form img {
+        width: 100%;
+        margin-bottom: 50px;
+      }
+
+      @media screen and (max-width: 420px) {
+        .magic-aliner {
+          padding: 20px;
+          padding-bottom: 40px;
+        }
+      }
+    }
 </style>

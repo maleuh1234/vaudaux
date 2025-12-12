@@ -1,25 +1,21 @@
 <template>
-  <div class="page-header">
-    <h1> {{textes[currentLanguage].Title}}  </h1>
-  </div>
-  <div>
-    <p class="intro-text">{{textes[currentLanguage].Intro}} </p>
-  </div>
+  <div class="page-header-2">
+        <div class="title"><h1>Nos réalisations</h1></div>
+        <div class="header-intro">
+            <p>Découvrez nos réalisations, où le savoir-faire artisanal se met au service de créations uniques, pensées et façonnées avec soin pour sublimer chaque projet.</p>
+        </div>
+    </div>
   <div class="creation-grid">
-    <RouterLink 
+    <div 
       v-for="(creation, index) in creations" 
       :key="index" 
-      :to="{ name: 'product', params: { id: creation.sys.id }}" 
       class="creation"
     >
-    <div class="creation-img">
       <img 
         :src="creation.fields.imgs[0]?.fields.file.url" 
         :alt="creation.fields.titre"
       >
     </div>
-      <p>{{ creation.fields.titre }}</p>
-    </RouterLink>
   </div>
   <leFooter/>
 </template>
@@ -70,57 +66,97 @@ export default {
 
 <style scoped>
 
-.page-header {
-  background-image: url(../assets/images-home/0K6A9321.jpg);
-}
+.spacer {
+        height: 200px;
+    }
+    .page-header-2 {
+        margin-top: 90px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin-bottom: 100px;
+    }
 
-h1 {
-  position: absolute;
-}
+    .title {
+        background-color: #fff;
+        padding: 0 3%;
+        position: relative;
+        bottom: -28px;
+    }
+.header-intro {
+        color: #aea597;
+        border: 1px solid #aea597;
+        font-size: 19px;
+        max-width: 94%;
+        padding: 40px 10% 30px 10%;
+        border-radius: 10px;
+        text-align: center;
+    }
 
-.creation {
-  margin-bottom: 5rem;
-}
+    h1 { 
+        color: #aea597;
+        position: static;
+        font-size: 38px;
+        z-index: 1;
+    }
 
 .creation-grid {
   display: grid;
-  grid-template-columns: repeat(1, 100%);
-  grid-gap: 0;
-  max-width: 100vw;
+  margin: auto;
+  margin-bottom: 100px;
+  width: fit-content;
+  max-width: 90%;
 }
 
-.creation-img {
+/* —— Mobile par défaut : grille simple —— */
+.creation-grid {
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+}
+
+.creation {
   width: 100%;
-  aspect-ratio: 5/6;
+  object-fit: cover;
+  object-position: center;
   overflow: hidden;
-  transition: .5s;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.creation-img:hover {
-  transform: scale(1.01);
+.creation img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* empêche toute déformation */
+  object-position: center;
+  display: block;
 }
 
-@media screen and (min-width: 765px) {
-  .line-item {
-    width: 100%;
-  }
-  .creation {
-    margin-bottom: 3.5rem;
-  }
-  .creation-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 340px);
-    grid-gap: 1rem;
-    width: fit-content;
-    margin: 5rem auto;
-  }
-}
-
+/* —— Desktop layout personnalisé —— */
 @media screen and (min-width: 1100px) {
   .creation-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 375px);
-    grid-gap: 2rem;
+    grid-template-columns: repeat(4, 300px);
+    grid-auto-rows: 450px;
+    grid-template-areas:
+      "A A B C"
+      "A A D E"
+      "F G H H";
+  }
+
+  /* On applique les zones uniquement après 1100px */
+  .creation:nth-child(1) { grid-area: A; }
+  .creation:nth-child(2) { grid-area: B; }
+  .creation:nth-child(3) { grid-area: C; }
+  .creation:nth-child(4) { grid-area: D; }
+  .creation:nth-child(5) { grid-area: E; }
+  .creation:nth-child(6) { grid-area: F; }
+  .creation:nth-child(7) { grid-area: G; }
+  .creation:nth-child(8) { grid-area: H; }
+
+  .creation-grid {
+    margin: auto;  
   }
 }
 

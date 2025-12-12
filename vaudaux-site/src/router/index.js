@@ -3,7 +3,6 @@ import HomeView from '../views/HomeView.vue'
 import ContactView from '../views/ContactView.vue'
 import CreationView from '../views/CreationView.vue'
 import PresentationView from '../views/PresentationView.vue'
-import ProductView from '../views/Produit.vue'
 import LegalView from '../views/Legal.vue'
 import ValuesView from '../views/ValuesView.vue'
 import HistoryView from '../views/HistoryView.vue'
@@ -49,12 +48,6 @@ const routes = [
     path: '/knowHow',
     name: 'Know-how',
     component: SavoirFaireView
-  },
-  {
-    path: '/creations/:id',
-    name: 'product',
-    component: ProductView,
-    props: true,
   },
   // {
   //   path: '/about',

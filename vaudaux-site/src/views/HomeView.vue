@@ -36,100 +36,106 @@
   <div class="spacer"></div>
 <leFooter/>
 </template>
-<script setup>
-    import leFooter from "../components/Footer.vue";
-</script>
+
 <script>
-import { ref, onMounted, onUnmounted } from 'vue';
-import { gsap } from 'gsap';
+import { ref, onMounted, onUnmounted } from 'vue'
+import { gsap } from 'gsap'
+import leFooter from '../components/Footer.vue'
 
-import defaultImageMobile from '@/assets/images-home/390x824-Noel.jpg';
-import defaultImageTablet from '@/assets/images-home/768x1024-Noel.jpg';
-import defaultImageDesktop from '@/assets/images-home/1440x900-Noel.jpg';
-import defaultImageLarge from '@/assets/images-home/1920x1080-Noel.jpg';
+import defaultImageMobile from '@/assets/images-home/390x824-Noel.jpg'
+import defaultImageTablet from '@/assets/images-home/768x1024-Noel.jpg'
+import defaultImageDesktop from '@/assets/images-home/1440x900-Noel.jpg'
+import defaultImageLarge from '@/assets/images-home/1920x1080-Noel.jpg'
 
-import imageUrl1 from '@/assets/images-home/0K6A1107.jpg';
-import imageUrl2 from '@/assets/images-home/0K6A9321.jpg'; 
-// TERST
+import imageUrl1 from '@/assets/images-home/0K6A1107.jpg'
+import imageUrl2 from '@/assets/images-home/0K6A9321.jpg'
+
 export default {
+  name: 'HomePage',
+
+  components: {
+    leFooter,
+  },
+
   data() {
     return {
-      currentLanguage: localStorage.getItem("Language") || "fr-CH",
+      currentLanguage: localStorage.getItem('Language') || 'fr-CH',
       textes: {
-        "fr-CH": {
+        'fr-CH': {
           Title: "Prestataire officiel du Grand Prix d’Horlogerie de Genève.",
-          Pres: "Présentation",
-          Crea:"Créations",
+          Pres: 'Présentation',
+          Crea: 'Créations',
         },
-        "en-US": {
+        'en-US': {
           Title: "Official Service Provider of the Grand Prix d'Horlogerie de Genève.",
-          Pres: "Presentation",
-          Crea:"creations",
+          Pres: 'Presentation',
+          Crea: 'Creations',
         },
       },
-      
-    };
+    }
   },
-  name: 'HomePage',
-  setup() {
-    const foregroundLayer = ref(null);
-    const enTete = ref(null);
-    const defaultImageUrl = ref(defaultImageDesktop);
 
-     const updateBackground = () => {
-      const width = window.innerWidth;
+  setup() {
+    const foregroundLayer = ref(null)
+    const enTete = ref(null)
+    const defaultImageUrl = ref(defaultImageDesktop)
+
+    const updateBackground = () => {
+      const width = window.innerWidth
       if (width < 600) {
-        defaultImageUrl.value = defaultImageMobile;
+        defaultImageUrl.value = defaultImageMobile
       } else if (width < 1024) {
-        defaultImageUrl.value = defaultImageTablet;
+        defaultImageUrl.value = defaultImageTablet
       } else if (width < 1600) {
-        defaultImageUrl.value = defaultImageDesktop;
+        defaultImageUrl.value = defaultImageDesktop
       } else {
-        defaultImageUrl.value = defaultImageLarge;
+        defaultImageUrl.value = defaultImageLarge
       }
-    };
+    }
 
     const changeImage = (newImageUrl) => {
       gsap.to(foregroundLayer.value, {
         opacity: 0,
         duration: 0.2,
         onComplete: () => {
-          foregroundLayer.value.style.backgroundImage = `url(${newImageUrl})`;
-          gsap.to(foregroundLayer.value, { opacity: 1, duration: 0.2 });
+          foregroundLayer.value.style.backgroundImage = `url(${newImageUrl})`
+          gsap.to(foregroundLayer.value, { opacity: 1, duration: 0.2 })
         },
-      });
-      gsap.to(enTete.value, { opacity: 0, duration: 0.3, delay: .2 });
-    };
+      })
+      if (enTete.value) {
+        gsap.to(enTete.value, { opacity: 0, duration: 0.3, delay: 0.2 })
+      }
+    }
 
-     const resetImage = () => {
-      gsap.to(foregroundLayer.value, { opacity: 0, duration: 0.3 });
-      gsap.to(enTete.value, { opacity: 1, duration: 0.3, delay: 0.2 });
-    };
+    const resetImage = () => {
+      gsap.to(foregroundLayer.value, { opacity: 0, duration: 0.3 })
+      if (enTete.value) {
+        gsap.to(enTete.value, { opacity: 1, duration: 0.3, delay: 0.2 })
+      }
+    }
 
-    // --- Préchargement des images ---
-    const preloadImage = (src) => {
-      return new Promise((resolve) => {
-        const img = new Image();
-        img.src = src;
-        img.onload = resolve;
-      });
-    };
+    const preloadImage = (src) =>
+      new Promise((resolve) => {
+        const img = new Image()
+        img.src = src
+        img.onload = resolve
+      })
 
     onMounted(async () => {
-       updateBackground(); // Choisir l’image initiale
-        window.addEventListener('resize', updateBackground); // Réagir au redimensionnement
+      updateBackground()
+      window.addEventListener('resize', updateBackground)
 
-        await preloadImage(defaultImageMobile);
-        await preloadImage(defaultImageTablet);
-        await preloadImage(defaultImageDesktop);
-        await preloadImage(defaultImageLarge);
-        await preloadImage(imageUrl1);
-        await preloadImage(imageUrl2);
-    });
+      await preloadImage(defaultImageMobile)
+      await preloadImage(defaultImageTablet)
+      await preloadImage(defaultImageDesktop)
+      await preloadImage(defaultImageLarge)
+      await preloadImage(imageUrl1)
+      await preloadImage(imageUrl2)
+    })
 
-     onUnmounted(() => {
-      window.removeEventListener('resize', updateBackground);
-    });
+    onUnmounted(() => {
+      window.removeEventListener('resize', updateBackground)
+    })
 
     return {
       defaultImageUrl,
@@ -139,10 +145,11 @@ export default {
       resetImage,
       foregroundLayer,
       enTete,
-    };
+    }
   },
-};
+}
 </script>
+
 
 <style scoped>
 .spacer {

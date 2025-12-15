@@ -15,6 +15,10 @@ html {
     font-style: normal;
 }
 
+.spacer-footer {
+  height: 90px;
+}
+
 .page-header {
     height: 230px;
     position: relative;
@@ -68,6 +72,14 @@ html {
     font-weight: 500;
     font-size: 1rem;
   }
+
+  header {
+    background-color: #fff;
+    height: 7rem;
+    width: 100%;
+    z-index: 10;
+  }
+
   @media screen and (min-width: 756px) {
 
     body, 

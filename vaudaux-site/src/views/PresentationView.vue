@@ -69,6 +69,7 @@
     <img src="../assets/images-home/boite-real.jpg" alt="">
   </div>
   <leFooter/>
+    <div class="spacer-footer"></div>
 </template>
 
 <script>

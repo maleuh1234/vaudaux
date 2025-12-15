@@ -13,13 +13,15 @@
         </div>
         <div>
             <nav class="main-nav">
-                <RouterLink to="/">{{textes[currentLang].Home}}</RouterLink>
-                <RouterLink to="/creations">{{textes[currentLang].Crea}}</RouterLink>
-                <RouterLink to="/presentation">{{textes[currentLang].Presentation}}</RouterLink>
-                <RouterLink to="/contact">Contact</RouterLink>
+                <RouterLink @click="closeMenu" to="/">{{textes[currentLang].Home}}</RouterLink>
+                <RouterLink @click="closeMenu" to="/creations">{{textes[currentLang].Crea}}</RouterLink>
+                <RouterLink @click="closeMenu" to="/knowHow">savoir-faire</RouterLink>
+                <RouterLink @click="closeMenu" to="/history">histoire</RouterLink>
+                <RouterLink @click="closeMenu" to="/values">valeur</RouterLink>
+                <RouterLink @click="closeMenu" to="/contact">Contact</RouterLink>
                 <div class="language-changer">
-                    <button  @click="setLanguageFR">FR</button>
-                    <button  @click="setLanguageEN">EN</button>
+                <button @click="setLanguageFR">FR</button>
+                <button @click="setLanguageEN">EN</button>
                 </div>
             </nav>
     </div>

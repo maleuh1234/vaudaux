@@ -18,9 +18,10 @@
     </div>
   </div>
   <leFooter/>
+    <div class="spacer-footer"></div>
 </template>
 <script setup>
-import leFooter from "../components/Footer.vue";
+    import leFooter from "../components/Footer.vue";
 </script>
 <script>
 import contentfulClient from '@/contentfulClient.js';

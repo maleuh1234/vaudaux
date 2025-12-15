@@ -1,8 +1,5 @@
 <template>
   <header>
-    <div class="logo-aligner"  v-if="!isProductRoute">
-      <RouterLink class="logo-home-link" to="/"><img class="logo-home" ref="logo" src="./assets/logo.png" alt="Vaudaux" /></RouterLink>
-    </div>
     <AppNavigation v-if="!isProductRoute"/>
   </header>  
   <div id="smooth-wrapper">

@@ -95,79 +95,80 @@
       </form>
     </div>
   </div>
-  <leFooter/>
+<leFooter/>
+    <div class="spacer-footer"></div>
 </template>
 
 <script>
-import Swal from "sweetalert2";
-
-export default {
-  data() {
-    return {
-      textes: {
-        "fr-CH": {
-          titre: "Notre bureau",
-          telephone: "TEL :",
-
-          //Pour le form
-          nom: "Nom*",
-          prenom: "Prénom*",
-          entreprise: "Entreprise",
-          email: "Email*",
-          telephoneLabel: "Téléphone",
-          texteDemande: "Texte de la demande*",
-          envoyer: "Envoyer",
-          demandeContact: "Demande de contact",
-          validationMessage: "Veuillez remplir tous les champs obligatoires.",
+  import Swal from "sweetalert2";
+  
+  export default {
+    data() {
+      return {
+        textes: {
+          "fr-CH": {
+            titre: "Notre bureau",
+            telephone: "TEL :",
+            
+            //Pour le form
+            nom: "Nom*",
+            prenom: "Prénom*",
+            entreprise: "Entreprise",
+            email: "Email*",
+            telephoneLabel: "Téléphone",
+            texteDemande: "Texte de la demande*",
+            envoyer: "Envoyer",
+            demandeContact: "Demande de contact",
+            validationMessage: "Veuillez remplir tous les champs obligatoires.",
+          },
+          "en-US": {
+            titre: "Our office",
+            telephone: "PHONE :",
+            
+            //Pour le form
+            nom: "Last Name*",
+            prenom: "First Name*",
+            entreprise: "Company",
+            email: "Email*",
+            telephoneLabel: "Phone",
+            texteDemande: "Request Text*",
+            envoyer: "Send",
+            demandeContact: "Contact Request",
+            validationMessage: "Please fill in all required fields.",
+          },
         },
-        "en-US": {
-          titre: "Our office",
-          telephone: "PHONE :",
-
-          //Pour le form
-          nom: "Last Name*",
-          prenom: "First Name*",
-          entreprise: "Company",
-          email: "Email*",
-          telephoneLabel: "Phone",
-          texteDemande: "Request Text*",
-          envoyer: "Send",
-          demandeContact: "Contact Request",
-          validationMessage: "Please fill in all required fields.",
+        currentLang: localStorage.getItem("Language") || "en-US",
+        form: {
+          nom: "",
+          prenom: "",
+          entreprise: "",
+          email: "",
+          telephone: "",
+          texte_demande: "",
         },
+      };
+    },
+    
+    methods: {
+      handleFileUpload(event) {
+        this.form.fichier = event.target.files[0];
       },
-      currentLang: localStorage.getItem("Language") || "en-US",
-      form: {
-        nom: "",
-        prenom: "",
-        entreprise: "",
-        email: "",
-        telephone: "",
-        texte_demande: "",
-      },
-    };
-  },
-
-methods: {
-  handleFileUpload(event) {
-    this.form.fichier = event.target.files[0];
-  },
-
-    submitForm() {
-      if (
-        !this.form.nom ||
-        !this.form.prenom ||
-        !this.form.email ||
-        !this.form.texte_demande
-      ) {
-        Swal.fire({
-          icon: "error",
-          title: "Erreur",
-          text: this.textes[this.currentLang].validationMessage,
+      
+      submitForm() {
+        if (
+          !this.form.nom ||
+          !this.form.prenom ||
+          !this.form.email ||
+          !this.form.texte_demande
+        ) {
+          Swal.fire({
+            icon: "error",
+            title: "Erreur",
+            text: this.textes[this.currentLang].validationMessage,
         });
         return;
       }
-
+      
       const formData = new URLSearchParams();
       formData.append("nom", this.form.nom);
       formData.append("prenom", this.form.prenom);
@@ -175,11 +176,11 @@ methods: {
       formData.append("email", this.form.email);
       formData.append("telephone", this.form.telephone);
       formData.append("texte_demande", this.form.texte_demande);
-
+      
       if (this.form.fichier) {
         formData.append("fichier", this.form.fichier);
       }
-
+      
       fetch("https://api.claudemeylan.ch/vaudaux.php", {
         method: "POST",
         body: formData,
@@ -187,36 +188,36 @@ methods: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
       })
-        .then((response) => {
-          if (!response.ok) {
-            return response.text().then((text) => {
-              throw new Error(text);
-            });
-          }
-          return response.text();
-        })
-        .then((result) => {
-          Swal.fire({
-            icon: "success",
-            title: "Succès",
-            text: result,
+      .then((response) => {
+        if (!response.ok) {
+          return response.text().then((text) => {
+            throw new Error(text);
           });
-          // Réinitialiser le formulaire
-          this.form.nom = "";
-          this.form.prenom = "";
-          this.form.entreprise = "";
-          this.form.email = "";
-          this.form.telephone = "";
-          this.form.texte_demande = "";
-        })
-        .catch((error) => {
-          console.error("Erreur:", error);
-          Swal.fire({
-            icon: "error",
-            title: "Erreur",
-            text: error.message,
-          });
+        }
+        return response.text();
+      })
+      .then((result) => {
+        Swal.fire({
+          icon: "success",
+          title: "Succès",
+          text: result,
         });
+        // Réinitialiser le formulaire
+        this.form.nom = "";
+        this.form.prenom = "";
+        this.form.entreprise = "";
+        this.form.email = "";
+        this.form.telephone = "";
+        this.form.texte_demande = "";
+      })
+      .catch((error) => {
+        console.error("Erreur:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Erreur",
+          text: error.message,
+        });
+      });
     },
   },
 }

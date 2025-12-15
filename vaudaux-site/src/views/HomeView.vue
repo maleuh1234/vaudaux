@@ -1,15 +1,44 @@
 <template>
   <div class="home-page-background">
       <div class="background-layer" :style="{ backgroundImage: `url(${defaultImageUrl})` }">
-         <!-- <img class="logo-ephj" src="../assets/images-home/LuxepackTA.png" alt="">
-        <img src="../assets/images-home/luxepackT.png" alt="">  -->
       </div>
       <div class="foreground-layer" ref="foregroundLayer"></div>      
-      <!-- <h1 class="home-h1" ref="enTete">{{textes[currentLanguage].Title}}</h1> -->
-      <RouterLink to="/presentation" class="hp-button button-right" @mouseover="changeImage(imageUrl1)" @mouseleave="resetImage">{{textes[currentLanguage].Pres}}</RouterLink>
-      <RouterLink to="/creations" class="hp-button button-left" @mouseover="changeImage(imageUrl2)" @mouseleave="resetImage">{{textes[currentLanguage].Crea}}</RouterLink>
   </div>
-</template> 
+  <section class="citation-container">
+    <img class="citation-svg" src="../assets/images-home/sitation-1.svg" alt="">
+    <p class="citation">Être gainier, c'est sculpter l’écrin qui sublime l’objet. C’est un art exigeant où chaque geste perpétue un savoir-faire d’exception. Chez Vaudaux, nous ne façonnons pas seulement du cuir, nous façonnons l’élégance et l’excellence.</p>
+    <p class="signature">Philippe Belais, CEO</p>
+  </section>
+  <section class="gainerie">
+    <img src="../assets/images-home/gainerie.jpg" alt="">
+    <div class="gainerie-text">
+      <h2>Qu’est ce que la gainerie ?</h2>
+      <p>La gainerie, c’est <b>l’art de couvrir un objet d’un matériau noble pour le protéger et le sublimer</b>. Née à l’époque des chevaliers, elle servait autrefois à façonner des gaines en cuir pour les armes – d’où l’expression "dégainer une arme". <br><br>Aujourd’hui, ce savoir-faire allie tradition et innovation pour créer des écrins, coffrets et présentoirs, perpétuant ainsi l’excellence artisanale au service du luxe.</p>
+    </div>
+  </section>
+  <section class="instagram">
+    <h2></h2>
+<iframe src="//lightwidget.com/widgets/b038f33ed3be5cf18cad457919f986d1.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>  </section>
+  <section class="link-grid">
+    <RouterLink to="/history">
+      <img src="../assets/images-home/lien-histoire.jpg" alt="">
+      <p>Notre histoire</p>
+    </RouterLink>
+    <RouterLink to="/values">
+      <img src="../assets/images-home/lien-value.jpg" alt="">
+      <p>Nos valeurs</p>
+    </RouterLink>
+    <RouterLink to="/KnowHow">
+      <img src="../assets/images-home/lien-savoir.jpg" alt="">
+      <p>Nos savoir-faire</p>
+    </RouterLink>
+  </section>
+  <div class="spacer"></div>
+<leFooter/>
+</template>
+<script setup>
+    import leFooter from "../components/Footer.vue";
+</script>
 <script>
 import { ref, onMounted, onUnmounted } from 'vue';
 import { gsap } from 'gsap';
@@ -116,13 +145,17 @@ export default {
 </script>
 
 <style scoped>
+.spacer {
+  height: 100px;
+}
+
 .home-page-background {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   overflow: hidden;
 }
 
@@ -147,95 +180,180 @@ export default {
   margin: 0 0 60px 10%;
 }
 
-.foreground-layer {
-  z-index: 1;
-  opacity: 0;
-}
-
-.home-h1 {
+.citation-container {
   position: relative;
-  width: 90%;
-  text-align: center;
-  font-size: 1.414rem;
-  color: #fff;
-  z-index: 3;
-  position: static;
-}
-
-button {
-  margin: 0 10px;
-  position: relative;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.hp-button {
-  position: absolute;
   display: flex;
   align-items: center;
-  bottom: 5rem;
-  z-index: 5;
-  transition: .3s;
-  color: white;
-  font-size: 1.3rem;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  background-color: rgb(174, 165, 151);
-  padding: 10px 20px;
-  border: 5px solid rgb(174, 165, 151);
+  flex-direction: column;
+  width: 40%;
+  margin: 250px auto;
+  border: 3px solid #aea59755;
+  border-radius: 30px;
+  padding: 70px 0 30px 0;
 }
 
-.hp-button:hover {
-  text-decoration: none;
-  color: rgb(174, 165, 151);
-  background-color: #fff;
+.citation-svg {
+  height: 250px;
+  position: absolute;
+  top: -300px;
+  right: -70px;
 }
 
-.button-left {
-  left: 4rem;
-  transform-origin: left;
+.citation {
+  font-size: 24px;
+  color: #000;
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 50px;
+  width: 120%;
 }
 
-.button-right {
-  right: 4rem;
+.signature {
+  font-size: 20px;
+  color: #aea597;
+  font-weight: 300;
+  text-align: center;
 }
 
-
-@media screen and (max-width: 412px) {
-  .button-right {
-    bottom: 1rem;
-    right: 1rem;
-  }
-  
-  .button-left {
-    left: 1rem;
-    bottom: 6rem;
-  }
-
+.gainerie {
+  display: flex;
+  align-items: center;
+  margin: 100px auto;
+  max-width: 90%;
 }
-@media screen and (min-width: 1100px) {
-  .home-h1 {
-    font-size: 3rem;
-  }
 
-  .hp-button {
-    font-size: 2rem;
-  }
-  .hp-button .arrow {
-    transform: scale(1);
-  }
-  .background-layer img {
-    width: 70%;
-    height: auto;
-    margin: 0 0 60px 0%;
-  }
-  .logo-ephj {
-    width: 65% !important;
-    position: absolute;
-    margin-bottom: 20px;
-    margin-left: 0 !important;
-  }
+.gainerie img {
+  width: 45%;
 }
+
+.gainerie-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: -50px;
+}
+
+.gainerie-text h2 {
+  font-size: 32px;
+  color: #000;
+}
+
+.gainerie-text p {
+  font-size: 20px;
+  color: #fff;
+  background-color: #aea597;
+  line-height: 32px;
+  margin-top: 20px;
+  padding: 30px;
+}
+
+.instagram {
+  max-width: 90%;
+  margin: 100px auto;
+  height: 800px;
+}
+
+iframe {
+  height: 100%;
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15%;
+  margin: 300px auto;
+  max-width: 80%;
+}
+
+.link-grid a {
+  background-color: #aea597;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-grid p {
+  position: absolute;
+  color: #fff;
+  font-size: 45px;
+  font-weight: 500;
+  background-color: #aea597bb;
+  padding: 20px;
+  width: 120%;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.link-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.link-grid a:hover p {
+  background-color: #aea597;
+}
+@media screen and (max-width: 768px) {
+  .citation-container {
+        width: 80%;
+        margin: 150px auto;
+        padding: 50px 0 20px 0;
+      }
+
+      .citation-svg {
+        height: 150px;
+        top: -180px;
+        right: -30px;
+      }
+
+      .citation {
+        font-size: 18px;
+        width: 90%;
+        margin-bottom: 30px;
+      }
+
+      .gainerie {
+        flex-direction: column;
+      }
+
+      .gainerie img {
+        width: 80%;
+        margin-bottom: 30px;
+      }
+
+      .gainerie-text {
+        left: 0;
+      }
+
+      .gainerie-text h2 {
+        font-size: 28px;
+        text-align: center;
+      }
+      
+      .gainerie-text p {
+        font-size: 16px;
+        line-height: 28px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .link-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        margin: 200px auto;
+      }
+
+      .link-grid p {
+        font-size: 32px;
+        width: 150%;
+      }
+}
+   
 </style>

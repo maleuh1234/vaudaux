@@ -51,8 +51,12 @@
     </div>
     <div class="spacer"></div>
 
+<leFooter/>
+    <div class="spacer-footer"></div>
 </template>
-
+<script setup>
+    import leFooter from "../components/Footer.vue";
+</script>
 <style scoped>
     .spacer {
         height: 200px;

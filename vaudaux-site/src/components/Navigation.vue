@@ -34,11 +34,7 @@
           <button @click="setLanguageFR">FR</button>
           <button @click="setLanguageEN">EN</button>
         </div>
-        <a class="instagram-link" href="https://www.instagram.com/vaudaux_geneve/" @click.stop>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="..."/></svg>
-        </a>
       </nav>
-
       <div class="legal-container">
         <RouterLink @click="closeMenu" to="/legal" class="legal" target="_blank" rel="noopener noreferrer">{{textes[currentLang].legal}}</RouterLink>
       </div>
@@ -141,6 +137,9 @@ export default {
 }
 .opened-burger.active {
   display: flex;
+}
+.main-nav {
+  margin-bottom: 70px;
 }
 
 .side-panel {

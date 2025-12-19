@@ -166,9 +166,9 @@ closeMenu() {
   }
 
   .logo-aligner {
-    height: 45;
+    height: 45px;
     position: absolute;
-    top: 15px;
+    top: 40px;
     width: 100%;
     display: flex;
     justify-content: center;

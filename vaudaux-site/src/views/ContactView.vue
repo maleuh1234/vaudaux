@@ -3,7 +3,7 @@
     <div class="text-container">
       <h2>{{textes[currentLang].titre}}</h2>
       <div class="info-container">
-        <div class="mini-title">Adresse</div>
+        <div class="mini-title">{{ textes[currentLang].adresse }}</div>
         <p>Av Louis-Pictet 9 </p>
         <p>1214 Vernier (Suisse)</p>
       </div>
@@ -16,8 +16,8 @@
         <a href="mailto:info@vaudaux-ge.com">info@vaudaux-ge.com</a>
       </div>
       <div class="info-container">
-        <div class="mini-title">Horaires</div>
-        <p>Du lundi au vendredi</p>
+        <div class="mini-title">{{ textes[currentLang].horaires }}</div>
+        <p>{{ textes[currentLang].lundi }}</p>
         <p>08h00-12h00 / 14h00-17h00</p>
       </div>
     </div>
@@ -109,6 +109,9 @@
           "fr-CH": {
             titre: "Notre bureau",
             telephone: "TEL :",
+            adresse: "Adresse :",
+            horaires: "Horaires :",
+            lundi: "Du lundi au vendredi :",
             
             //Pour le form
             nom: "Nom*",
@@ -124,6 +127,9 @@
           "en-US": {
             titre: "Our office",
             telephone: "PHONE :",
+            adresse: "Adress :",
+            horaires: "Opening our :",
+            lundi: "Form monday to friday :",
             
             //Pour le form
             nom: "Last Name*",

@@ -1,8 +1,8 @@
 <template>
   <div class="page-header-2">
-        <div class="title"><h1>Nos réalisations</h1></div>
+        <div class="title"><h1>{{textes[currentLang].Title}}</h1></div>
         <div class="header-intro">
-            <p>Découvrez nos réalisations, où le savoir-faire artisanal se met au service de créations uniques, pensées et façonnées avec soin pour sublimer chaque projet.</p>
+            <p>{{textes[currentLang].Intro}}</p>
         </div>
     </div>
   <div class="creation-grid">
@@ -34,16 +34,16 @@ import contentfulClient from '@/contentfulClient.js';
 export default {
   data() {
     return {
-      currentLanguage: localStorage.getItem("Language") || "fr-CH",
+      currentLang: localStorage.getItem("Language") || "fr-CH",
       creations: [],
       textes: {
         "fr-CH": {
-          Title: "Créations",
-          Intro: "Depuis plus d’un siècle, nos artisans de la maison perpétuent leur savoir-faire, toujours soucieux du détail, de la délicatesse des coupes et des assemblages, offrant une qualité sans égale aux écrins et autres présentoirs qui mettront en valeur les objets et l’identité de chaque marque des Maisons pour lesquelles nous créons. Les matières, soigneusement sélectionnées, bénéficient de finitions élégantes et soignées pour une harmonie toujours fonctionnelle.",
+          Title: "Nos réalisations",
+          Intro: "Découvrez nos réalisations, où le savoir-faire artisanal se met au service de créations uniques, pensées et façonnées avec soin pour sublimer chaque projet.",
         },
         "en-US": {
-          Title: "Creations",
-          Intro: "For over a century, the artisans of our house have been passing down their expertise, always attentive to detail, the finesse of cuts and assemblies, offering unrivaled quality in the cases and other displays that showcase the objects and the identity of each brand for which we create. The carefully selected materials are enhanced by elegant and refined finishes, ensuring a harmonious yet functional result.",
+          Title: "Our Creations",
+          Intro: "Discover our creations, where artisanal expertise meets the art of crafting unique pieces, thoughtfully designed and meticulously shaped to enhance every project.",
         },
       },
       
@@ -54,7 +54,7 @@ export default {
     try {
       const entries = await contentfulClient.getEntries({
         content_type: 'vaudauxRealisation', // Remplace par l'ID de ton type de contenu
-        locale: this.currentLanguage, // Filtre les entrées selon la langue actuelle
+        locale: this.currentLang, // Filtre les entrées selon la langue actuelle
       });
       this.creations = entries.items.map(item => item); // Mets à jour le tableau 'creations'
       console.log(this.creations);

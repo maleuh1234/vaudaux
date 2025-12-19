@@ -6,31 +6,34 @@
   </div>
   <section class="citation-container">
     <img class="citation-svg" src="../assets/images-home/sitation-1.svg" alt="">
-    <p class="citation">Être gainier, c'est sculpter l’écrin qui sublime l’objet. C’est un art exigeant où chaque geste perpétue un savoir-faire d’exception. Chez Vaudaux, nous ne façonnons pas seulement du cuir, nous façonnons l’élégance et l’excellence.</p>
+    <p class="citation">{{textes[currentLang].citation}}</p>
     <p class="signature">Philippe Belais, CEO</p>
   </section>
   <section class="gainerie">
     <img src="../assets/images-home/gainerie.jpg" alt="">
     <div class="gainerie-text">
-      <h2>Qu’est ce que la gainerie ?</h2>
-      <p>La gainerie, c’est <b>l’art de couvrir un objet d’un matériau noble pour le protéger et le sublimer</b>. Née à l’époque des chevaliers, elle servait autrefois à façonner des gaines en cuir pour les armes – d’où l’expression "dégainer une arme". <br><br>Aujourd’hui, ce savoir-faire allie tradition et innovation pour créer des écrins, coffrets et présentoirs, perpétuant ainsi l’excellence artisanale au service du luxe.</p>
+      <h2>{{textes[currentLang].gainerie_titre}}</h2>
+      <p>{{textes[currentLang].gainerie_texte}}</p>
     </div>
   </section>
   <section class="instagram">
-    <h2></h2>
 <iframe src="//lightwidget.com/widgets/b038f33ed3be5cf18cad457919f986d1.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>  </section>
   <section class="link-grid">
     <RouterLink to="/history">
       <img src="../assets/images-home/lien-histoire.jpg" alt="">
-      <p>Notre histoire</p>
+      <p>{{textes[currentLang].histoire}}</p>
     </RouterLink>
     <RouterLink to="/values">
       <img src="../assets/images-home/lien-value.jpg" alt="">
-      <p>Nos valeurs</p>
+      <p>{{textes[currentLang].value}}</p>
     </RouterLink>
     <RouterLink to="/KnowHow">
       <img src="../assets/images-home/lien-savoir.jpg" alt="">
-      <p>Nos savoir-faire</p>
+      <p>{{textes[currentLang].gainerie_know}}</p>
+    </RouterLink>
+    <RouterLink to="/creations">
+      <img src="../assets/images-home/lien-actu.png" alt="">
+      <p>{{textes[currentLang].realisation}}</p>
     </RouterLink>
   </section>
   <div class="spacer"></div>
@@ -59,17 +62,25 @@ export default {
 
   data() {
     return {
-      currentLanguage: localStorage.getItem('Language') || 'fr-CH',
+      currentLang: localStorage.getItem('Language') || 'fr-CH',
       textes: {
         'fr-CH': {
-          Title: "Prestataire officiel du Grand Prix d’Horlogerie de Genève.",
-          Pres: 'Présentation',
-          Crea: 'Créations',
+          citation: "Être gainier, c'est sculpter l’écrin qui sublime l’objet. C’est un art exigeant où chaque geste perpétue un savoir-faire d’exception. Chez Vaudaux, nous ne façonnons pas seulement du cuir, nous façonnons l’élégance et l’excellence.",
+          gainerie_titre: "Qu’est-ce que la gainerie ?",
+          gainerie_texte: "La gainerie, c’est l’art de couvrir un objet d’un matériau noble pour le protéger et le sublimer. Née à l’époque des chevaliers, elle servait autrefois à façonner des gaines en cuir pour les armes – d’où l’expression &#34; dégainer une arme &#34;. Aujourd’hui, ce savoir-faire allie tradition et innovation pour créer des écrins, coffrets et présentoirs, perpétuant ainsi l’excellence artisanale au service du luxe.",
+          realisation: "Nos réalisations",
+          gainerie_know: "Nos savoir-faire",
+          histoire: "Notre histoire",
+          value: "Nos Valeurs",
         },
         'en-US': {
-          Title: "Official Service Provider of the Grand Prix d'Horlogerie de Genève.",
-          Pres: 'Presentation',
-          Crea: 'Creations',
+          citation: "Being a leather artisan means creating the perfect frame to showcase each piece. Every movement honors a tradition of unmatched craftsmanship. At Vaudaux, we don’t just work with leather — we craft elegance and excellence.",
+          gainerie_titre: "What is leather casing?",
+          gainerie_texte: "Leather casing is the skill of covering an object with a precious material, both to protect it and enhance its beauty. Dating back to the age of knights, it was first used to make leather sheaths for weapons—giving rise to the expression “drawing a weapon.” Today, this art blends tradition with innovation to produce cases, boxes, and displays that embody luxury craftsmanship at its finest.",
+          realisation: "Our Creations",
+          gainerie_know: "Know how",
+          histoire: "Our History",
+          value: "Our Values",
         },
       },
     }

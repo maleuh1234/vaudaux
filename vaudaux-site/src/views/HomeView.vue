@@ -7,13 +7,13 @@
   <section class="citation-container">
     <img class="citation-svg" src="../assets/images-home/sitation-1.svg" alt="">
     <p class="citation">{{textes[currentLang].citation}}</p>
-    <p class="signature">Philippe Belais, CEO</p>
+    <p class="signature arial">Philippe Belais, CEO</p>
   </section>
   <section class="gainerie">
     <img src="../assets/images-home/gainerie.jpg" alt="">
     <div class="gainerie-text">
-      <h2>{{textes[currentLang].gainerie_titre}}</h2>
-      <p>{{textes[currentLang].gainerie_texte}}</p>
+      <h2 class="italic">{{textes[currentLang].gainerie_titre}}</h2>
+      <p class="arial">{{textes[currentLang].gainerie_texte}}</p>
     </div>
   </section>
   <section class="instagram">
@@ -67,7 +67,7 @@ export default {
         'fr-CH': {
           citation: "Être gainier, c'est sculpter l’écrin qui sublime l’objet. C’est un art exigeant où chaque geste perpétue un savoir-faire d’exception. Chez Vaudaux, nous ne façonnons pas seulement du cuir, nous façonnons l’élégance et l’excellence.",
           gainerie_titre: "Qu’est-ce que la gainerie ?",
-          gainerie_texte: "La gainerie, c’est l’art de couvrir un objet d’un matériau noble pour le protéger et le sublimer. Née à l’époque des chevaliers, elle servait autrefois à façonner des gaines en cuir pour les armes – d’où l’expression &#34; dégainer une arme &#34;. Aujourd’hui, ce savoir-faire allie tradition et innovation pour créer des écrins, coffrets et présentoirs, perpétuant ainsi l’excellence artisanale au service du luxe.",
+          gainerie_texte: "La gainerie, c’est l’art de couvrir un objet d’un matériau noble pour le protéger et le sublimer. Née à l’époque des chevaliers, elle servait autrefois à façonner des gaines en cuir pour les armes – d’où l’expression &quot; dégainer une arme &quot;. Aujourd’hui, ce savoir-faire allie tradition et innovation pour créer des écrins, coffrets et présentoirs, perpétuant ainsi l’excellence artisanale au service du luxe.",
           realisation: "Nos réalisations",
           gainerie_know: "Nos savoir-faire",
           histoire: "Notre histoire",
@@ -203,7 +203,7 @@ export default {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 40%;
+  width: 50%;
   margin: 250px auto;
   border: 3px solid #aea59755;
   border-radius: 30px;
@@ -218,7 +218,7 @@ export default {
 }
 
 .citation {
-  font-size: 24px;
+  font-size: 30px;
   color: #000;
   font-weight: 500;
   font-style: italic;
@@ -282,8 +282,8 @@ iframe {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15%;
-  margin: 300px auto;
-  max-width: 80%;
+  margin: 50px auto;
+  max-width: 60%;
 }
 
 .link-grid a {
@@ -295,6 +295,7 @@ iframe {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
 }
 
 .link-grid p {
@@ -307,18 +308,21 @@ iframe {
   width: 120%;
   text-align: center;
   transition: all 0.3s ease;
+  border-radius: 5px;
 }
 .link-grid img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  border-radius: 5px;
 }
 
 .link-grid a:hover p {
   background-color: #aea597;
 }
-@media screen and (max-width: 768px) {
+
+  @media screen and (max-width: 768px) {
   .citation-container {
         width: 80%;
         margin: 150px auto;

@@ -217,6 +217,7 @@ export default {
         margin: 10% 5%;
         font-size: 24px;
         line-height: 38px;
+        font-family: 'arial';
     }
 
     @media screen and (max-width: 768px) {

@@ -6,32 +6,36 @@
       <div class="bread2" ref="bread2"></div>
       <div class="bread3" ref="bread3"></div>
     </div>
-    <p>Menu</p>
+    <p class="arial not-mobile">Menu</p>
     <div class="burger-background" ref="burgerBackground"></div>
   </div>
   <div class="logo-aligner"  v-if="!isProductRoute">
     <RouterLink class="logo-home-link" to="/"><img class="logo-home" ref="logo" src="../assets/logo.svg" alt="Vaudaux" /></RouterLink>
   </div>
   <div class="right-menu">
-    <div class="language-changer">
-          <button @click="setLanguageFR">FR</button>
+    <div class="language-changer not-mobile">
+          <button class="arial" @click="setLanguageFR">FR</button>
           /
-          <button @click="setLanguageEN">EN</button>
+          <button class="arial" @click="setLanguageEN">EN</button>
     </div>
-    <RouterLink to="/contact"><svg width="103" height="90" viewBox="0 0 103 90" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_76_112)"><path d="M51.03 0C22.85 0 0 19.99 0 44.65C0 54.21 3.43 63.06 9.28 70.32C8.09 75.29 7.25 80.34 6.77 85.43C6.65 86.67 7.8 87.65 9.01 87.33L24.96 83.04C32.59 87.02 41.51 89.31 51.04 89.31C79.22 89.31 102.07 69.32 102.07 44.66C102.07 20 79.21 0 51.03 0ZM27.04 51.03C23.52 51.03 20.66 48.17 20.66 44.65C20.66 41.13 23.52 38.27 27.04 38.27C30.56 38.27 33.42 41.13 33.42 44.65C33.42 48.17 30.56 51.03 27.04 51.03ZM51.03 51.03C47.51 51.03 44.65 48.17 44.65 44.65C44.65 41.13 47.51 38.27 51.03 38.27C54.55 38.27 57.41 41.13 57.41 44.65C57.41 48.17 54.55 51.03 51.03 51.03ZM75.02 51.03C71.5 51.03 68.64 48.17 68.64 44.65C68.64 41.13 71.5 38.27 75.02 38.27C78.54 38.27 81.4 41.13 81.4 44.65C81.4 48.17 78.54 51.03 75.02 51.03Z" fill="#AEA597"/></g><defs><clipPath id="clip0_76_112"><rect width="102.06" height="89.29" fill="white"/></clipPath></defs></svg></RouterLink>
+    <RouterLink class="not-mobile" to="/contact"><svg width="103" height="90" viewBox="0 0 103 90" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_76_112)"><path d="M51.03 0C22.85 0 0 19.99 0 44.65C0 54.21 3.43 63.06 9.28 70.32C8.09 75.29 7.25 80.34 6.77 85.43C6.65 86.67 7.8 87.65 9.01 87.33L24.96 83.04C32.59 87.02 41.51 89.31 51.04 89.31C79.22 89.31 102.07 69.32 102.07 44.66C102.07 20 79.21 0 51.03 0ZM27.04 51.03C23.52 51.03 20.66 48.17 20.66 44.65C20.66 41.13 23.52 38.27 27.04 38.27C30.56 38.27 33.42 41.13 33.42 44.65C33.42 48.17 30.56 51.03 27.04 51.03ZM51.03 51.03C47.51 51.03 44.65 48.17 44.65 44.65C44.65 41.13 47.51 38.27 51.03 38.27C54.55 38.27 57.41 41.13 57.41 44.65C57.41 48.17 54.55 51.03 51.03 51.03ZM75.02 51.03C71.5 51.03 68.64 48.17 68.64 44.65C68.64 41.13 71.5 38.27 75.02 38.27C78.54 38.27 81.4 41.13 81.4 44.65C81.4 48.17 78.54 51.03 75.02 51.03Z" fill="#AEA597"/></g><defs><clipPath id="clip0_76_112"><rect width="102.06" height="89.29" fill="white"/></clipPath></defs></svg></RouterLink>
   </div>
 
   <div class="opened-burger" :class="{ 'active': isToggled }">
+    <div class="fermer arial" @click="closeMenu">X fermer</div>
     <div class="side-panel">
       <nav class="main-nav">
-        <RouterLink @click="closeMenu" to="/">{{textes[currentLang].Home}}</RouterLink>
-        <RouterLink @click="closeMenu" to="/creations">{{textes[currentLang].Crea}}</RouterLink>
-        <RouterLink @click="closeMenu" to="/knowHow">savoir-faire</RouterLink>
-        <RouterLink @click="closeMenu" to="/history">histoire</RouterLink>
-        <RouterLink @click="closeMenu" to="/values">valeur</RouterLink>
-        <RouterLink @click="closeMenu" to="/contact">Contact</RouterLink>
+        <ul style="list-style-type:disc;">
+          <li><RouterLink @click="closeMenu" to="/">{{textes[currentLang].Home}}</RouterLink></li>
+          <li><RouterLink @click="closeMenu" to="/creations">{{textes[currentLang].Crea}}</RouterLink></li>
+          <li><RouterLink @click="closeMenu" to="/knowHow">savoir-faire</RouterLink></li>
+          <li><RouterLink @click="closeMenu" to="/history">histoire</RouterLink></li>
+          <li><RouterLink @click="closeMenu" to="/values">valeur</RouterLink></li>
+          <li><RouterLink @click="closeMenu" to="/contact">Contact</RouterLink></li>
+        </ul>
         <div class="language-changer">
           <button @click="setLanguageFR">FR</button>
+           / 
           <button @click="setLanguageEN">EN</button>
         </div>
       </nav>
@@ -133,8 +137,19 @@ export default {
   width: 100%;
   height: 100vh;
   display: none;
-  z-index: 15;
+  z-index: 20;
 }
+.fermer {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+    z-index: 21;
+  padding: 10px;
+}
+
 .opened-burger.active {
   display: flex;
 }
@@ -157,9 +172,16 @@ export default {
   justify-content: flex-start;
 }
 
+li {
+  padding-left: 30px;
+  margin-left: 15px;
+}
+
 .side-panel * {
   font-size: 30px;
   margin-top: 15px;
+  text-transform: capitalize;
+  font-style: italic;
 }
 
 .overlay {
@@ -223,6 +245,13 @@ export default {
   margin-top: 50px;
 }
 
+.not-mobile {
+  display: block; 
+}
+
+.legal-container a {
+  font-size: 18px;
+}
 
   @media(min-width: 1100px) {
     .side-panel {
@@ -234,6 +263,15 @@ export default {
     .side-panel * {
       font-size: 20px;
       margin-top: 7px;
+    }
+    .legal-container a {
+      font-size: 15px;
+    }
+    .side-panel {
+      padding-top: 100px;
+    }
+    .not-mobile {
+      display: none; 
     }
   }
 </style>

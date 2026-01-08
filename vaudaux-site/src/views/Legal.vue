@@ -172,7 +172,7 @@ closeMenu() {
     width: 100%;
     display: flex;
     justify-content: center;
-    z-index: 1000000;
+    z-index: 1000000000000000;
   }
 
   .spacer {

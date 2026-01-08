@@ -33,7 +33,6 @@
     </div>
     <div class="spacer"></div>
     <leFooter/>
-    <div class="spacer-footer"></div>
 </template>
 <script setup>
     import leFooter from "../components/Footer.vue";
@@ -124,7 +123,7 @@ export default {
         color: #aea597;
         border: 1px solid #aea597;
         font-size: 19px;
-        max-width: 94%;
+        max-width: 75%;
         padding: 40px 10% 30px 10%;
         border-radius: 10px;
         text-align: center;

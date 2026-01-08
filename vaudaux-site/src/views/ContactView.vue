@@ -4,21 +4,21 @@
       <h2>{{textes[currentLang].titre}}</h2>
       <div class="info-container">
         <div class="mini-title">{{ textes[currentLang].adresse }}</div>
-        <p>Av Louis-Pictet 9 </p>
-        <p>1214 Vernier (Suisse)</p>
+        <p class="arial">Av Louis-Pictet 9 </p>
+        <p class="arial">1214 Vernier (Suisse)</p>
       </div>
       <div class="info-container">
         <div class="mini-title">{{textes[currentLang].telephone}}</div>
-        <a href="tel:+41229390500">+41 22 939 05 00</a> 
+        <a class="arial" href="tel:+41229390500">+41 22 939 05 00</a> 
       </div>
       <div class="info-container">
         <div class="mini-title">Mail</div>
-        <a href="mailto:info@vaudaux-ge.com">info@vaudaux-ge.com</a>
+        <a class="arial" href="mailto:info@vaudaux-ge.com">info@vaudaux-ge.com</a>
       </div>
       <div class="info-container">
         <div class="mini-title">{{ textes[currentLang].horaires }}</div>
-        <p>{{ textes[currentLang].lundi }}</p>
-        <p>08h00-12h00 / 14h00-17h00</p>
+        <p class="arial">{{ textes[currentLang].lundi }}</p>
+        <p class="arial">08h00-12h00 / 14h00-17h00</p>
       </div>
     </div>
     <img src="../assets/contact/map.png" alt="position de l'usine" />
@@ -96,7 +96,6 @@
     </div>
   </div>
 <leFooter/>
-    <div class="spacer-footer"></div>
 </template>
 
 <script>
@@ -257,6 +256,7 @@
     color: #000;
     font-size: 40px;
     margin-bottom: 20px;
+    font-style: italic;
   }
 
   .magic-aliner img {

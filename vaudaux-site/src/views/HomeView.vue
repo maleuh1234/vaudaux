@@ -175,6 +175,7 @@ export default {
   width: 100vw;
   height: 80vh;
   overflow: hidden;
+  margin-top: 84px;
 }
 
 .background-layer,
@@ -271,18 +272,19 @@ export default {
 .instagram {
   max-width: 90%;
   margin: 100px auto;
-  height: 800px;
+  height: fit-content;
+  margin-top: 200px;
 }
 
 iframe {
-  height: 100%;
+  height: 650px;
 }
 
 .link-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15%;
-  margin: 50px auto;
+  margin: 100px auto;
   max-width: 60%;
 }
 
@@ -376,6 +378,23 @@ iframe {
         font-size: 32px;
         width: 150%;
       }
+      iframe {
+        height: 250px;
+      }
+      .instagram {
+        margin: 100px auto;
+        margin-bottom: 100px;
+      }
 }
+
+  @media screen and (max-width: 435px) {
+    iframe {
+      height: 100px;
+    }
+    .instagram {
+      margin: 50px auto;
+      margin-bottom: 50px;
+      }
+  }
    
 </style>

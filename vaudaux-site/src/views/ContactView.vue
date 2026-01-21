@@ -4,8 +4,10 @@
       <h2>{{textes[currentLang].titre}}</h2>
       <div class="info-container">
         <div class="mini-title">{{ textes[currentLang].adresse }}</div>
-        <p class="arial">Av Louis-Pictet 9 </p>
-        <p class="arial">1214 Vernier (Suisse)</p>
+          <a href="https://www.google.com/maps/place/Vaudaux/data=!4m2!3m1!1s0x0:0xf6e9465f687c8d6c?sa=X&ved=1t:2428&ictx=111">
+            <p class="arial">Av Louis-Pictet 9 </p>
+            <p class="arial">1214 Vernier (Suisse)</p>
+          </a>
       </div>
       <div class="info-container">
         <div class="mini-title">{{textes[currentLang].telephone}}</div>
@@ -29,7 +31,7 @@
     <img src="../assets/contact/form.png" alt="">
     <div class="formulaire">
 
-      <h2>{{ textes[currentLang].demandeContact }}</h2>
+      <h2 class="italic">{{ textes[currentLang].demandeContact }}</h2>
       <form @submit.prevent="submitForm">
         <div class="contact-aligner">
           <div class="smaller-input">
@@ -87,8 +89,7 @@
               v-model="form.texte_demande"
               required
             ></textarea>
-  
-            <button class="button" type="submit">
+            <button class="button italic" type="submit">
               {{ textes[currentLang].envoyer }}
             </button>
         </div>
@@ -107,7 +108,7 @@
         textes: {
           "fr-CH": {
             titre: "Notre bureau",
-            telephone: "TEL :",
+            telephone: "Téléphone :",
             adresse: "Adresse :",
             horaires: "Horaires :",
             lundi: "Du lundi au vendredi :",
@@ -120,7 +121,7 @@
             telephoneLabel: "Téléphone",
             texteDemande: "Texte de la demande*",
             envoyer: "Envoyer",
-            demandeContact: "Demande de contact",
+            demandeContact: "Nous contacter",
             validationMessage: "Veuillez remplir tous les champs obligatoires.",
           },
           "en-US": {
@@ -138,11 +139,11 @@
             telephoneLabel: "Phone",
             texteDemande: "Request Text*",
             envoyer: "Send",
-            demandeContact: "Contact Request",
+            demandeContact: "Contact us",
             validationMessage: "Please fill in all required fields.",
           },
         },
-        currentLang: localStorage.getItem("Language") || "en-US",
+        currentLang: localStorage.getItem("Language") || "fr-CH",
         form: {
           nom: "",
           prenom: "",
@@ -260,7 +261,7 @@
   }
 
   .magic-aliner img {
-    width: 70%;
+    width: 50%;
   }
   
   .info-container {

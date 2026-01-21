@@ -1,9 +1,11 @@
 <template>
     <footer>
         <div>
+          <a href="https://www.google.com/maps/place/Vaudaux/data=!4m2!3m1!1s0x0:0xf6e9465f687c8d6c?sa=X&ved=1t:2428&ictx=111">
             <p>Vaudaux SA</p>
             <p>Av Louis-Pictet 9</p>
             <p>1214 Vernier - Suisse</p>
+          </a>
         </div>
         <div class="middle">
             <p class="arial">Copyright © 2026 Vaudaux SA, Tous droits reservés</p>
@@ -32,10 +34,6 @@
                 <RouterLink @click="closeMenu" to="/contact">Contact</RouterLink>
                 <div class="legal-container">
                   <RouterLink to="/legal" class="legal" target="_blank" rel="noopener noreferrer">{{textes[currentLang].legal}}</RouterLink>
-                </div>
-                <div class="language-changer">
-                <button @click="setLanguageFR">FR</button>
-                <button @click="setLanguageEN">EN</button>
                 </div>
             </nav>
     </div>
@@ -74,17 +72,7 @@ export default {
       },
       currentLang: localStorage.getItem('Language') || 'fr-CH'
     };
-  },
-  methods: {
-    setLanguageFR(){
-      localStorage.setItem('Language', "fr-CH");
-      location.reload();
-    },
-    setLanguageEN(){
-      localStorage.setItem('Language', "en-US");
-      location.reload();
-    },
-    }
+  }
 }
 </script>
 <style>

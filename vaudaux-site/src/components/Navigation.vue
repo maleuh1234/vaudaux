@@ -28,9 +28,9 @@
         <ul style="list-style-type:disc;">
           <li><RouterLink @click="closeMenu" to="/">{{textes[currentLang].Home}}</RouterLink></li>
           <li><RouterLink @click="closeMenu" to="/creations">{{textes[currentLang].Crea}}</RouterLink></li>
-          <li><RouterLink @click="closeMenu" to="/knowHow">savoir-faire</RouterLink></li>
-          <li><RouterLink @click="closeMenu" to="/history">histoire</RouterLink></li>
-          <li><RouterLink @click="closeMenu" to="/values">valeur</RouterLink></li>
+          <li><RouterLink @click="closeMenu" to="/knowHow">{{textes[currentLang].know}}</RouterLink></li>
+          <li><RouterLink @click="closeMenu" to="/history">{{textes[currentLang].hist}}</RouterLink></li>
+          <li><RouterLink @click="closeMenu" to="/values">{{textes[currentLang].value}}</RouterLink></li>
           <li><RouterLink @click="closeMenu" to="/contact">Contact</RouterLink></li>
         </ul>
         <div class="language-changer">
@@ -71,14 +71,20 @@ export default {
       textes: {
         "fr-CH": {
           Home: "Accueil",
-          Crea: "Créations",
+          Crea: "Nos réalisations",
           Presentation: "Présentation",
+          value: "Nos valeurs",
+          know: "Nos savoir faire",
+          hist: "Notre histoire",
           legal: "Mentions légales"
         },
         "en-US": {
           Home: "Home",
-          Crea: "Creations",
+          Crea: "Our Creations",
           Presentation: "Presentation",
+          value: "Our Values",
+          know: "Our Know-how",
+          hist: "Our History",
           legal: "Legal Mentions"
         }
       },

@@ -20,7 +20,7 @@
       <div class="info-container">
         <div class="mini-title">{{ textes[currentLang].horaires }}</div>
         <p class="arial">{{ textes[currentLang].lundi }}</p>
-        <p class="arial">08h00-12h00 / 14h00-17h00</p>
+        <p class="arial">08:00-12:00 / 14:00-17:00</p>
       </div>
     </div>
     <img src="../assets/contact/map.png" alt="position de l'usine" />
@@ -125,11 +125,11 @@
             validationMessage: "Veuillez remplir tous les champs obligatoires.",
           },
           "en-US": {
-            titre: "Our office",
-            telephone: "PHONE :",
-            adresse: "Adress :",
-            horaires: "Opening our :",
-            lundi: "Form monday to friday :",
+            titre: "Our Office",
+            telephone: "Phone :",
+            adresse: "Address :",
+            horaires: "Opening hours :",
+            lundi: "From Monday to Friday :",
             
             //Pour le form
             nom: "Last Name*",

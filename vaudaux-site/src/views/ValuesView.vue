@@ -49,7 +49,7 @@ export default {
     return {
       textes: {
         "fr-CH": {
-          page_titre: "Nos valeurs",
+          page_titre: "Nos Valeurs",
           page_text: "Vaudaux s’investit dans une démarche RSE, alliant excellence artisanale, responsabilité environnementale et impact social positif, pour un avenir plus durable.",
           titre1: "Environnement",
           text1: "Vaudaux s’engage activement pour le respect de l’environnement et adopte une démarche sociale et écologique en accord avec son métier et sa taille. Nous encourageons des pratiques responsables au quotidien, notamment le tri des déchets, la préservation des ressources et la réduction de notre empreinte énergétique. Chaque collaborateur est acteur de cet engagement pour un avenir plus durable.",
@@ -63,7 +63,7 @@ export default {
           text5: "Nous valorisons et respectons toutes les personnes avec lesquelles nous sommes en interaction. Cela inclut le respect des idées, de la diversité et de l’environnement. Chaque membre de notre équipe est encouragé à exprimer ses idées, à échanger et à contribuer individuellement au succès collectif",
         },
         "en-US": {
-          page_titre: "Our values",
+          page_titre: "Our Values",
           page_text: "Vaudaux is committed to a CSR-driven approach, combining artisanal excellence, environmental responsibility, and positive social impact to help shape a more sustainable future.",
           titre1: "Environment",
           text1: "Vaudaux actively promotes environmental responsibility through social and ecological practices aligned with our craft and company scale. We encourage responsible daily actions, including waste sorting, resource preservation, and reducing our energy footprint. Every employee plays an active role in this collective commitment to a more sustainable future.",
@@ -175,26 +175,6 @@ export default {
     }
     .image-4 {
         background-image: url(../assets/images-values/1x/4.jpg);
-    }
-    .vector-1 {
-        background-size: 60%;
-        background-image: url(../assets/images-values/SVG/vector1.svg);
-    }
-    .vector-2 {
-        background-size: 60%;
-        background-image: url(../assets/images-values/SVG/vector2.svg);
-    }
-    .vector-3 {
-        background-size: 60%;
-        background-image: url(../assets/images-values/SVG/vector3.svg);
-    }
-    .vector-4 {
-        background-size: 60%;
-        background-image: url(../assets/images-values/SVG/vector4.svg);
-    }
-    .vector-5 {
-        background-size: 60%;
-        background-image: url(../assets/images-values/SVG/vector5.svg);
     }
 
     @media (min-width: 650px) {

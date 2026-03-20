@@ -16,8 +16,8 @@
       <p class="arial">{{textes[currentLang].gainerie_texte}}</p>
     </div>
   </section>
-  <section class="instagram">
-<iframe src="//lightwidget.com/widgets/b038f33ed3be5cf18cad457919f986d1.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>  </section>
+  <!-- <section class="instagram">
+<iframe src="//lightwidget.com/widgets/b038f33ed3be5cf18cad457919f986d1.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>  </section> -->
   <section class="link-grid">
     <RouterLink to="/history">
       <img src="../assets/images-home/lien-histoire.jpg" alt="">
@@ -67,7 +67,7 @@ export default {
         'fr-CH': {
           citation: "Être gainier, c'est sculpter l’écrin qui sublime l’objet. C’est un art exigeant où chaque geste perpétue un savoir-faire d’exception. Chez Vaudaux, nous ne façonnons pas seulement du cuir, nous façonnons l’élégance et l’excellence.",
           gainerie_titre: "Qu’est-ce que la gainerie ?",
-          gainerie_texte: "La gainerie, c’est l’art de couvrir un objet d’un matériau noble pour le protéger et le sublimer. Née à l’époque des chevaliers, elle servait autrefois à façonner des gaines en cuir pour les armes – d’où l’expression &quot; dégainer une arme &quot;. Aujourd’hui, ce savoir-faire allie tradition et innovation pour créer des écrins, coffrets et présentoirs, perpétuant ainsi l’excellence artisanale au service du luxe.",
+          gainerie_texte: "La gainerie, c’est l’art de couvrir un objet d’un matériau noble pour le protéger et le sublimer. Née à l’époque des chevaliers, elle servait autrefois à façonner des gaines en cuir pour les armes – d’où l’expression « dégainer une arme ». Aujourd’hui, ce savoir-faire allie tradition et innovation pour créer des écrins, coffrets et présentoirs, perpétuant ainsi l’excellence artisanale au service du luxe.",
           realisation: "Nos réalisations",
           gainerie_know: "Nos savoir-faire",
           histoire: "Notre histoire",

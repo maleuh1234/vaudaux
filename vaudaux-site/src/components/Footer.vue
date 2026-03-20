@@ -62,7 +62,7 @@ export default {
           Crea: "Nos réalisations",
           Presentation: "Présentation",
           value: "Nos valeurs",
-          know: "Nos savoir faire",
+          know: "Nos savoir-faire",
           hist: "Notre histoire",
           legal: "Mentions légales"
         },
@@ -109,6 +109,7 @@ footer {
         display: flex;
         flex-direction: column;
         font-size: 15px;
+        z-index: 1;
     }
 
     .language-changer * {

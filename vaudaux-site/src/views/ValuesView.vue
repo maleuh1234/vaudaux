@@ -49,7 +49,7 @@ export default {
     return {
       textes: {
         "fr-CH": {
-          page_titre: "Nos Valeurs",
+          page_titre: "Nos valeurs",
           page_text: "Vaudaux s’investit dans une démarche RSE, alliant excellence artisanale, responsabilité environnementale et impact social positif, pour un avenir plus durable.",
           titre1: "Environnement",
           text1: "Vaudaux s’engage activement pour le respect de l’environnement et adopte une démarche sociale et écologique en accord avec son métier et sa taille. Nous encourageons des pratiques responsables au quotidien, notamment le tri des déchets, la préservation des ressources et la réduction de notre empreinte énergétique. Chaque collaborateur est acteur de cet engagement pour un avenir plus durable.",

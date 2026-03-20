@@ -74,7 +74,7 @@ export default {
           Crea: "Nos réalisations",
           Presentation: "Présentation",
           value: "Nos valeurs",
-          know: "Nos savoir faire",
+          know: "Nos savoir-faire",
           hist: "Notre histoire",
           legal: "Mentions légales"
         },
@@ -186,7 +186,6 @@ li {
 .side-panel * {
   font-size: 30px;
   margin-top: 15px;
-  text-transform: capitalize;
   font-style: italic;
 }
 

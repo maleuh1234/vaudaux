@@ -22,7 +22,7 @@
   </div>
 
   <div class="opened-burger" :class="{ 'active': isToggled }">
-    <div class="fermer arial" @click="closeMenu">X fermer</div>
+    <div class="fermer arial" @click="closeMenu">X {{textes[currentLang].fermer}}</div>
     <div class="side-panel">
       <nav class="main-nav">
         <ul style="list-style-type:disc;">
@@ -76,6 +76,7 @@ export default {
           value: "Nos valeurs",
           know: "Nos savoir-faire",
           hist: "Notre histoire",
+          fermer: "Fermer",
           legal: "Mentions légales"
         },
         "en-US": {
@@ -85,6 +86,7 @@ export default {
           value: "Our Values",
           know: "Our Know-how",
           hist: "Our History",
+          fermer: "Close",
           legal: "Legal Mentions"
         }
       },

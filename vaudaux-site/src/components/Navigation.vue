@@ -84,7 +84,7 @@ export default {
           Crea: "Our Creations",
           Presentation: "Presentation",
           value: "Our Values",
-          know: "Our Know-how",
+          know: "Our Know-How",
           hist: "Our History",
           fermer: "Close",
           legal: "Legal Mentions"

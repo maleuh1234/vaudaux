@@ -72,7 +72,7 @@
         <div class="history-spacer"></div>
         <section class="inverted">
             <p>{{textes[currentLang].Paragraphe12}}</p>
-            <h2>Aujourd’hui</h2>
+            <h2>{{ textes[currentLang].Aujo }}</h2>
             <img src="../assets/images-history/history12-8.png" alt="">
         </section>
     </div>
@@ -109,6 +109,7 @@ export default {
           Paragraphe9: "L’entreprise atteint 7500 m², emploie 250 personnes et produit des centaines de milliers d’écrins par an. Mais la crise horlogère de la fin des années 2000 fragilise l’activité.",
           Paragraphe10: "Philippe Belais rachète la manufacture. Fort de son expérience dans le domaine du commerce, il identifie et corrige les dysfonctionnements de l'entreprise. Il met en valeur les savoir-faire de Vaudaux et restructure l'organisation pour assurer son développement.",
           Paragraphe11: "Création d’une unité de production en Espagne, à Elche, un haut lieu du savoir-faire de la chaussure en cuir. Cette implantation permet de croiser les expertises et de bénéficier d’une main-d’oeuvre qualifiée. L'unité se spécialise dans la fabrication de petites et moyennes séries d’écrins et de maroquinerie.",
+          Aujo: "Aujourd’hui",
           Paragraphe12: "Aujourd’hui : Forts de notre expertise reconnue et de la qualité de notre savoir-faire, nous répondons à une grande diversité de demandes, tant en quantité qu’en variété de projets. Toujours tournés vers l’avenir, nous intégrons les dernières technologies pour enrichir nos méthodes de production, tout en préservant et transmettant l’héritage artisanal qui fait la réputation de Vaudaux.",
         },
         "en-US": {
@@ -124,6 +125,7 @@ export default {
           Paragraphe9: "The company expanded to 7,500 m², employing 250 people and producing hundreds of thousands of cases each year. However, the watchmaking crisis at the end of the 2000s put the business under pressure.",
           Paragraphe10: "Philippe Belais acquired the manufacture. Drawing on his experience in commerce, he identified and addressed the company’s challenges. He highlighted Vaudaux’s craftsmanship and restructured the organization to ensure its continued growth.",
           Paragraphe11: "A production unit was established in Elche, Spain, a renowned hub of leather footwear expertise. This facility allows for the exchange of skills and access to a highly skilled workforce. The unit specializes in producing small to medium series of cases and leather goods.",
+          Aujo: "Today",
           Paragraphe12: "Building on our recognized expertise and the quality of our craftsmanship, we cater to a wide range of requests, both in volume and project variety. Always looking to the future, we integrate the latest technologies to enhance our production methods while preserving and passing on the artisanal heritage that defines Vaudaux.",
         }
       },

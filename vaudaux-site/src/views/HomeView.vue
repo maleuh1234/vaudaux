@@ -78,7 +78,7 @@ export default {
           gainerie_titre: "What is leather casing?",
           gainerie_texte: "Leather casing is the skill of covering an object with a precious material, both to protect it and enhance its beauty. Dating back to the age of knights, it was first used to make leather sheaths for weapons — giving rise to the expression “drawing a weapon.” Today, this art blends tradition with innovation to produce cases, boxes, and displays that embody luxury craftsmanship at its finest.",
           realisation: "Our Creations",
-          gainerie_know: "Know how",
+          gainerie_know: "Our Know-How",
           histoire: "Our History",
           value: "Our Values",
         },
